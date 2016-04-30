@@ -4,7 +4,6 @@ machine:
 dependencies:
   pre:
     - cd content
-    - gem uninstall bundler # use a custom version of bundler
     - gem install bundler --pre    
   
   override:
