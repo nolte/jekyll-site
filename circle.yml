@@ -1,0 +1,9 @@
+machine:
+  ruby:
+    version: rbx-2.2.6
+dependencies:
+  post:
+    - cd content
+    - bundle install
+  test:
+    - jekyll build  
