@@ -6,4 +6,8 @@ script: jekyll build
 gemfile:
   - content/Gemfile
 notifications:
-  slack: noltarium:slacktoken
+  slack: 
+    rooms:
+      -   noltarium:slacktoken#publicbuilds
+    on_success: always
+  
