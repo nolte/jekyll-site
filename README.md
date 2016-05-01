@@ -9,7 +9,7 @@ Jekyll on Heroku
 
 
 
-
+[#slack Channel](https://noltarium.slack.com/messages/publicbuilds)
 
 
 
