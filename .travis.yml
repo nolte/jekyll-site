@@ -1,17 +1,13 @@
 language: ruby
 rvm:
 - 2.1
-env:
-  global:
-  - secure: MHn0+ZeQCoLXu8vHkqu8JWKYWx4FwcvKEh7F4kHiCm2CRHScbKwsohlTVteMouPMKZEadMbtJB0/hbY0ew3yEAGJxyFZ2JkmYvSMBgOOoyjyeDc+e8ycOlku4ucF02faVg3YqdU3bhzsfAxYahP/G/xMDvRcSok8QpkFWj558jPP/eMI8/h23irDb651WDmyCgI1bWPeiJbIs69tSnuQ8Jb7u8seHxnUHh7T8e/dT05StPru06cq2f6uX1Z9L6YUrMMlBfdg+uV5RYoj48+aUZ9faS+y+2yEfNTMsuqbwehNx2bdv1vIIuCTNFyZ42zHQB8Gj0kRvqmQboJM4BqmS8GmV0/uUfKb3FsU0bepWC3Ks8bMZI1h2GOzg443N7RfF0RhMHNLTmxX3QpNi+J3qqq+i2WP1K2aFrS9p6GeT9ZutbwN9g7M5Att1weuL4Db9t0YSm+p/3+bo5YuVjsZp4Z5+zziguRLGTD5xKA79QUxcbW3vZl2aZAzjUQ91rBz+LfxaI9+uQ9EugLDtX7YFCCc9MwBk9yyWZMR4TSXVd1F0LhIuPfztTVd8yqrM3eEv63z31tAdijNB4Wa+f/nkVdQrh71Ce461csocI0gDfuGM2ILxwj9U2X9V7P6bLRwmqA190VHCLEnN8Fs6n9PIGz7spVF/jZJrsPgaSLO3aQ=
-  - secure: dihtKHEOueWSadnpoeN9r0iphyaJYbwe1GX/EuqTuaYB9vt2QtB56rjpffV/jcGNjJL+iRV8rUbsevZuOnp1B2AV+PIo5feMEjkdWCg1Nv7+nzUnxcFhcQx11eTNPrXog1R4W+Bjt6vzAvGi2uvn9huGDkWoMX7VBguAK+hglJgxk7PsjNzQD4adsi1anTxZf5VVOt7W9VjeiPXxuL3btlEDVe+c3E3vMxIcB9EFgSAKI0x/JYvbH5EANZfQI0b6ovUK0r8IF7lt+fHqouEO2R0/HS/K0eD4Fk72gRmwlWPpE/F8fmig9TJ9rkXY74Uwz3F0i1c18bhTbzf9lQ4PSOHG11qi+xYJNESAC+Ux5mUouOhVJvqzgzy129IGJ0RIvV1AGxStMVbsrJjK1elA4uU3QsrXv5nOHHcoLAAf8OhemM01bdTL67CioV+XYEVYUucqsrtnVb3EyhY2liv+Z489a47wgBfZy0m6fYVX0x5vT4gEwKfvuAKVEOFxAxivmg/yv8KaZXLdpGd23gAyDjPsakApDSUmbE2aPKQPCg58b3UYQEIGO89cldeSUWvUiKPj8G6072onHYyzwheCq0ox+6IxWzJjs6/7OZuy/4jjD4hoqpIH0iiqGZCVZ9m8UKbUR2g/PCwlPQLe0urs3pGNRzEw/lteEcP4muJJBHE=
 install: bundle install
 script: jekyll build
 gemfile:
 - content/Gemfile
 after_success: 
 - cd ./_site 
-- find . -type f -exec curl -u $FTP_SUSER:$FTP_PASSWORD --ftp-create-dirs -T {} ftp://jekyll.noltarium.de/site/{} \;
+- find . -type f -exec curl -u $FTP_USER:$FTP_PASSWORD --ftp-create-dirs -T {} ftp://jekyll.noltarium.de/jekyll.noltarium.de/{} \;
 
 notifications:
   slack:
