@@ -9,7 +9,8 @@ install: bundle install
 script: jekyll build
 gemfile:
 - content/Gemfile
-after_success: curl --ftp-create-dirs -T ./_site -u $FTP_USER:$FTP_PASSWORD ftp://jekyll.noltarium.de/site
+after_success: 
+- cd ./_site && find . -type f -exec curl -u $FTP_SUSER:$FTP_PASSWORD --ftp-create-dirs -T {} ftp://jekyll.noltarium.de/site/{}
 notifications:
   slack:
     rooms:
