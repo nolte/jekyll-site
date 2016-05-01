@@ -1,8 +1,8 @@
 language: ruby
 rvm:
   - 2.1
-install: gem install jekyll
-script: jekyll build --source ./content --destination ./target
+install: bundle install 
+script: jekyll build
 gemfile:
   - content/Gemfile
   
