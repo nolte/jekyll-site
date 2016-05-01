@@ -5,4 +5,5 @@ install: bundle install
 script: jekyll build
 gemfile:
   - content/Gemfile
-  
+notifications:
+  slack: noltarium:slacktoken
