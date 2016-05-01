@@ -1,6 +1,16 @@
 Jekyll on Heroku
 ----------------
-[![Build Status](https://snap-ci.com/nolte/jekyll-site/branch/master/build_image)](https://snap-ci.com/nolte/jekyll-test/branch/master)
+
+
+ [![Build Status](https://travis-ci.org/nolte/jekyll-site.svg?branch=master)](https://travis-ci.org/nolte/jekyll-site)      
+ [![Build Status](https://snap-ci.com/nolte/jekyll-site/branch/master/build_image)](https://snap-ci.com/nolte/jekyll-test/branch/master) 
+
+
+
+
+
+
+
 
 
 Play project for a Jekyll Page, base from [jekyll-on-heroku](https://www.jamesward.com/2014/09/24/jekyll-on-heroku)
