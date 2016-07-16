@@ -62,5 +62,8 @@ ssh-add deploy_key
 
 cd $BASEDIR/out
 
+echo $(pwd)
+echo ls -all
+
 # Now that we're all set up, we can push.
 git push $SSH_REPO $TARGET_BRANCH
