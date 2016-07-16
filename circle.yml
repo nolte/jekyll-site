@@ -9,6 +9,10 @@ machine:
     version:
       2.3.1
 
+checkout:
+  post:
+    - bash script/cibuild.sh  
+
 test:
   override:
     - bundle exec htmlproofer ./content/_site
