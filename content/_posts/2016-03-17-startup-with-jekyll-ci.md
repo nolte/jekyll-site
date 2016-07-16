@@ -23,17 +23,25 @@ categories: jekyll update
 
  Der Blog Basiert auf:
 
- * jekyll
- * reveal.js
- * bootstrap
+ * [jekyll](https://jekyllrb.com/){:target="_blank"}
+ * [reveal.js](http://lab.hakim.se/reveal-js/){:target="_blank"}
+ * [bootstrap](https://getbootstrap.com/){:target="_blank"} 
  
 ### Build
  
- Der Build soll auf [Travis-Ci](https://travis-ci.org/){:target="_blank"} stattfinden.
+ Der Build soll auf [Travis-Ci](https://travis-ci.org/){:target="_blank"} oder auf [CircleCi](https://circleci.com){:target="_blank"} stattfinden.
+
+#### Travis CI
+
+
+#### Circle CI
+
   
+
 ### Publishing
  
  Das fertige Artefakt soll auf zwei unterschiedliche weisen Publiziert werden.
+ 
 
 ### to FTP
 
