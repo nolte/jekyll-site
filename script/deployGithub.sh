@@ -32,7 +32,11 @@ cd out
 git config user.name "Travis CI"
 git config user.email "$COMMIT_AUTHOR_EMAIL"
 
-cp -r $BASEDIR/jekyll-site/content/_site/* .
+cp -r $BASEDIR/jekyll-site/content/_site/* $BASEDIR/out
+echo "content to checkin"
+echo $(pwd)
+ls -all
+
 
 # If there are no changes to the compiled out (e.g. this is a README update) then just bail.
 if [ -z `git diff --exit-code` ]; then
@@ -45,9 +49,11 @@ fi
 git add .
 git commit -m "Deploy to GitHub Pages: ${SHA}"
 
+echo "all files added"
 echo $(pwd)
 echo ls -all
 
+echo "switch to original to add the key"
 cd $BASEDIR/jekyll-site/settings/keys
 
 # Get the deploy key by using Travis's stored variables to decrypt deploy_key.enc
@@ -60,8 +66,8 @@ chmod 600 deploy_key
 eval `ssh-agent -s`
 ssh-add deploy_key
 
+echo "switch back ..."
 cd $BASEDIR/out
-
 echo $(pwd)
 echo ls -all
 
