@@ -48,14 +48,14 @@ layout: default
 <div class="navbar navbar-default">
         <div class="container">
           <div class="navbar-header">
-            <a class="navbar-brand" href="/">{{site.name}}</a>
+            <a class="navbar-brand" href="{{ site.github.url }}/">{{site.name}}</a>
           </div>
           <div id="navbar" class="navbar-collapse collapse">
             <ul class="nav navbar-nav">
               {% assign sorted_pages = site.pages | where: "navigation",true | sort:"name" %}
               {% for p in sorted_pages %}            
               <li {% if page.title == p.title %}class="active"{% endif %}>
-                <a href="{{ page.url | prepend: site.github.url }}">{{p.title}}</a>
+                <a href="{{ p.url | prepend: site.github.url }}">{{p.title}}</a>
               </li>
              {% endfor %}
             </ul>

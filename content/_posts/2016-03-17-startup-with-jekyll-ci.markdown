@@ -35,12 +35,12 @@ categories: jekyll update
  
  **URL:** [Travis-Ci](https://travis-ci.org/){:target="_blank"}
 
+ [![Build Status](https://travis-ci.org/nolte/jekyll-site.svg?branch=master)](https://travis-ci.org/nolte/jekyll-site)
 
 #### Circle CI
   
   **URL:** [CircleCi](https://circleci.com){:target="_blank"}
  
- [![Build Status](https://travis-ci.org/nolte/jekyll-site.svg?branch=master)](https://travis-ci.org/nolte/jekyll-site)
 
 #### Snap CI
 
