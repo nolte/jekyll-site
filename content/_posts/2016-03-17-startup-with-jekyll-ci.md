@@ -28,13 +28,17 @@ categories: jekyll update
  * bootstrap
  
 ### Build
-
+ 
+ Der Build soll auf [Travis-Ci](https://travis-ci.org/){:target="_blank"} stattfinden.
+  
 ### Publishing
  
- x
+ Das fertige Artefakt soll auf zwei unterschiedliche weisen Publiziert werden.
 
 ### to FTP
 
- d
+ Upload auf einen Remote FTP.
 
-### to GitHub Page xxxxxx  xxx
+### to GitHub Page
+
+ Commit and Publish to GitHub Page Branche.
