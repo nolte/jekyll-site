@@ -15,4 +15,5 @@ checkout:
 
 test:
   override:
-    - bundle exec htmlproofer ./content/_site
+    - cd ./content
+    - bundle exec htmlproofer ./_site
