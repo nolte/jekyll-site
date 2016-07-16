@@ -32,7 +32,7 @@ cd out
 git config user.name "Travis CI"
 git config user.email "$COMMIT_AUTHOR_EMAIL"
 
-cp -r ../jekyll-site/content/_sute/* .
+cp -r ../jekyll-site/content/_site/* .
 
 # If there are no changes to the compiled out (e.g. this is a README update) then just bail.
 if [ -z `git diff --exit-code` ]; then
@@ -60,7 +60,7 @@ chmod 600 deploy_key
 eval `ssh-agent -s`
 ssh-add deploy_key
 
-cd ../out
+cd ./../../../out
 
 # Now that we're all set up, we can push.
 git push $SSH_REPO $TARGET_BRANCH
