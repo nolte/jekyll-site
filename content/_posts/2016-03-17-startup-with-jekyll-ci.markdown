@@ -36,7 +36,9 @@ categories: jekyll update
 
 #### Circle CI
 
-  
+
+#### Snap CI
+
 
 ### Publishing
  
