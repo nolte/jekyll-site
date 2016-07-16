@@ -22,3 +22,8 @@ checkout:
 test:
   override:
     - bash script/citest.sh  
+
+## Custom notifications
+notify:
+  webhooks:
+    - url: https://hooks.slack.com/services/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
