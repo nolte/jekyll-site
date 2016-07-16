@@ -1,3 +1,9 @@
+general:
+  branches:
+    ignore:
+      - gh-pages # list of branches to ignore
+      - /release\/.*/ # or ignore regexes
+
 ## Customize the test machine
 machine:
 
@@ -15,5 +21,4 @@ checkout:
 
 test:
   override:
-    - cd ./content
-    - bundle exec htmlproofer ./_site
+    - bash script/citest.sh  
