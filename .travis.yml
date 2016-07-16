@@ -16,7 +16,7 @@ branches:
   only:
     - master
 
- after_success: 
+after_success: 
  - ./script/deployGithub.sh
 # - find . -type f -exec curl -u $FTP_USER:$FTP_PASSWORD --ftp-create-dirs -T {} ftp://jekyll.noltarium.de/jekyll.noltarium.de/{} \;
 
