@@ -20,20 +20,25 @@ ls -all
 
 cd out
 git checkout $TARGET_BRANCH || git checkout --orphan $TARGET_BRANCH
+echo "content after checkout"
 echo $(pwd)
 ls -all
-cd ..
 
 # Clean out existing contents
-rm -rf out/**/* || exit 0
+# rm -rf out/**/* || exit 0
+
+git rm -rf 
+git clean -fxd
+echo "content after clean"
+echo $(pwd)
+ls -all
 
 # Now let's go have some fun with the cloned repo
-cd out
 git config user.name "Travis CI"
 git config user.email "$COMMIT_AUTHOR_EMAIL"
 
 cp -r $BASEDIR/jekyll-site/content/_site/* $BASEDIR/out
-echo "content to checkin"
+echo "content after copy"
 echo $(pwd)
 ls -all
 
