@@ -8,8 +8,8 @@ TARGET_BRANCH="gh-pages"
 REPO=`git config remote.origin.url`
 SSH_REPO=${REPO/https:\/\/github.com\//git@github.com:}
 SHA=`git rev-parse --verify HEAD`
-
 cd ..
+BASEDIR = $(pwd)
 
 # Clone the existing gh-pages for this repo into out/
 # Create a new empty branch if gh-pages doesn't exist yet (should only happen on first deply)
@@ -32,7 +32,7 @@ cd out
 git config user.name "Travis CI"
 git config user.email "$COMMIT_AUTHOR_EMAIL"
 
-cp -r ../jekyll-site/content/_site/* .
+cp -r $BASEDIR/jekyll-site/content/_site/* .
 
 # If there are no changes to the compiled out (e.g. this is a README update) then just bail.
 if [ -z `git diff --exit-code` ]; then
@@ -48,7 +48,7 @@ git commit -m "Deploy to GitHub Pages: ${SHA}"
 echo $(pwd)
 echo ls -all
 
-cd ../jekyll-site/settings/keys
+cd $BASEDIR/jekyll-site/settings/keys
 
 # Get the deploy key by using Travis's stored variables to decrypt deploy_key.enc
 ENCRYPTED_KEY_VAR="encrypted_${ENCRYPTION_LABEL}_key"
@@ -60,7 +60,7 @@ chmod 600 deploy_key
 eval `ssh-agent -s`
 ssh-add deploy_key
 
-cd ./../../../out
+cd $BASEDIR/out
 
 # Now that we're all set up, we can push.
 git push $SSH_REPO $TARGET_BRANCH
