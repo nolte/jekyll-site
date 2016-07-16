@@ -4,14 +4,9 @@ rvm:
 
 before_script:
  - chmod +x ./script/cibuild.sh
+ - chmod +x ./script/deployGithub.sh
 
 script: ./script/cibuild.sh
-
-# branch whitelist, only for GitHub Pages
-# branches:
-#  only:
-#  - gh-pages     # test the gh-pages branch
-#  - /pages-(.*)/ # test every branch which starts with "pages-"
 
 env:
   global:
@@ -21,8 +16,8 @@ branches:
   only:
     - master
 
-# after_success: 
-# - cd ./_site 
+ after_success: 
+ - ./script/deployGithub.sh
 # - find . -type f -exec curl -u $FTP_USER:$FTP_PASSWORD --ftp-create-dirs -T {} ftp://jekyll.noltarium.de/jekyll.noltarium.de/{} \;
 
 notifications:
