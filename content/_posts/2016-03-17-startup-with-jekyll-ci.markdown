@@ -40,6 +40,8 @@ categories: jekyll update
 #### Circle CI
   
   **URL:** [CircleCi](https://circleci.com){:target="_blank"}
+  
+  [![Build Status](https://circleci.com/gh/:owner/:repo.svg?style=shield&circle-token=:circle-token)](https://circleci.com/gh/nolte/jekyll-site)
  
 
 #### Snap CI
