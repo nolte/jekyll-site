@@ -1,0 +1,13 @@
+jekyll: 
+#  image: jekyll/jekyll:pages
+  build: .
+  expose:
+    - 4000
+  ports: 
+    - 127.0.0.1:4000:4000    
+  environment:
+   - JIRA_TOKE=XYZ   
+  volumes:
+    - ./content:/srv/jekyll
+#  command: "jekyll new audiostation"
+#  command: "--trace"

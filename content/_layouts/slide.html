@@ -1,0 +1,90 @@
+---
+layout: default
+---
+
+<head>
+<meta charset="utf-8">
+<meta name="viewport"
+	content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>{{ page.title }}</title>
+
+<link rel="stylesheet" href="/assets/reveal/css/reveal.css">
+<link rel="stylesheet" href="/assets/reveal/css/theme/white.css" id="theme">
+
+
+<!-- Theme used for syntax highlighting of code -->
+<link rel="stylesheet" href="/assets/reveal/lib/css/zenburn.css">
+
+<!-- custome stuff -->
+<link rel="stylesheet" href="/assets/css/swingingIcon.css">
+
+
+<!-- Printing and PDF exports -->
+<script>
+	var link = document.createElement('link');
+	link.rel = 'stylesheet';
+	link.type = 'text/css';
+	link.href = window.location.search.match(/print-pdf/gi) ? '/assets/reveal/css/print/pdf.css' : '/assets/reveal/css/print/paper.css';
+	document.getElementsByTagName('head')[0].appendChild(link);
+</script>
+</head>
+<body>
+	<div class="reveal">
+		<div class="slides">
+		
+         {{ content }}
+          
+          <section>
+               <h2><a href="/" >Back to Diary</a></h2>
+          </section>
+  
+		</div>
+	</div>
+
+	<script src="/assets/reveal/lib/js/head.min.js"></script>
+	<script src="/assets/reveal/js/reveal.js"></script>
+
+	<script>
+		// More info https://github.com/hakimel/reveal.js#configuration
+		Reveal.initialize({
+			controls : true,
+			progress : true,
+			history : true,
+			center : true,
+			showNotes : false,
+			slideNumber : true,
+			transition : 'slide', // none/fade/slide/convex/concave/zoom
+
+			// More info https://github.com/hakimel/reveal.js#dependencies
+			// More info https://github.com/hakimel/reveal.js#dependencies
+			dependencies : [ {
+				src : '/assets/reveal/lib/js/classList.js',
+				condition : function() {
+					return !document.body.classList;
+				}
+			}, {
+				src : '/assets/reveal/plugin/markdown/marked.js',
+				condition : function() {
+					return !!document.querySelector('[data-markdown]');
+				}
+			}, {
+				src : '/assets/reveal/plugin/markdown/markdown.js',
+				condition : function() {
+					return !!document.querySelector('[data-markdown]');
+				}
+			}, {
+				src : '/assets/reveal/plugin/highlight/highlight.js',
+				async : true,
+				callback : function() {
+					hljs.initHighlightingOnLoad();
+				}
+			}, {
+				src : '/assets/reveal/plugin/zoom-js/zoom.js',
+				async : true
+			}, {
+				src : '/assets/reveal/plugin/notes/notes.js',
+				async : true
+			} ]
+		});
+	</script>
+</body>
