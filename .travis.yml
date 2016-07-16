@@ -1,27 +1,23 @@
 language: ruby
 rvm:
 - 2.3.1
-
 before_script:
- - chmod +x ./script/cibuild.sh
- - chmod +x ./script/deployGithub.sh
-
-script: ./script/cibuild.sh
-
+- chmod +x ./script/cibuild.sh
+- chmod +x ./script/deployGithub.sh
+script: "./script/cibuild.sh"
 env:
   global:
-  - NOKOGIRI_USE_SYSTEM_LIBRARIES=true # speeds up installation of html-proofer
-
+  - NOKOGIRI_USE_SYSTEM_LIBRARIES=true
 branches:
   only:
-    - master
-
-after_success: 
- - ./script/deployGithub.sh
-# - find . -type f -exec curl -u $FTP_USER:$FTP_PASSWORD --ftp-create-dirs -T {} ftp://jekyll.noltarium.de/jekyll.noltarium.de/{} \;
-
+  - master
+after_success:
+- "./script/deployGithub.sh"
 notifications:
   slack:
     rooms:
       secure: wxbdzqs8U7mbB68hNRzVCGEr+NaS2MZu24GdSdvLfV8Pae1vAd4T0fAhi8zzPxvVvQ/AxEDkhmKE9H0FJTkdPl1TqtBc01DGTHzsmMITLCMThBYy0LKgg0UZh4JPg/9svQyut+2mm0u0WImaQ92sK3DfxXQBcPDaLI2LPrffuWiBXjT5tGwu8u9CDYZs5atu1WcsYk4xg0E4s/Y6GMOuDkgLDMECFhrpiHETS+fBBFNNaIpzRhuWO3LVWTy8FjJRiay/V0Hb4ScfzQBfRmDOUqHVhFo1OElUYjsH26Atn75fpPDHr2pZxHWaJZ5naeBQcghTrfoglmzIKmJ1V53ZrtWNhnwWDG0RbtA9ZttRIX9//ip+4ShBoWgn10qacBTlwMidaTDIYG65mL47DR6upCcWl6ex+zX3jnN3W8D9UkM61yRgB8ZcsuIt7G1OB3zirF4+4OuXeMVDjTJExRR7AulBcWTfBPu1CQ9eM3buK0J64DR3jSnXN87Krj6Bhx2mqRKMtc8yWlGLWzwGiZzSj3vOIH/2urYIh+8jkmtrD4mVMLRKma4JyiE/IHya/lzb3082/rMesrmNTZ94pdJB3fU+LWsU0EaGx30/kfJFBru+3HKiEmDZ4Ur9CP3B7XVcdCYZxxHR7F4yy7UZsB0FlQcs7qHYDpPaU+iMUnRzqD4=
     on_success: always
+before_install:
+- openssl aes-256-cbc -K $encrypted_9153fcca69e9_key -iv $encrypted_9153fcca69e9_iv
+  -in deploy_key.enc -out deploy_key -d
