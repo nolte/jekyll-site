@@ -27,7 +27,7 @@ ls -all
 # Clean out existing contents
 # rm -rf out/**/* || exit 0
 
-git rm -rf 
+git rm -rf .
 git clean -fxd
 echo "content after clean"
 echo $(pwd)
