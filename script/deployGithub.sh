@@ -32,6 +32,8 @@ cd out
 git config user.name "Travis CI"
 git config user.email "$COMMIT_AUTHOR_EMAIL"
 
+cp -r ../jekyll-site/content/_sute/* .
+
 # If there are no changes to the compiled out (e.g. this is a README update) then just bail.
 if [ -z `git diff --exit-code` ]; then
     echo "No changes to the output on this push; exiting."
@@ -46,7 +48,7 @@ git commit -m "Deploy to GitHub Pages: ${SHA}"
 echo $(pwd)
 echo ls -all
 
-cd ~/jekyll-site/settings/keys
+cd ../jekyll-site/settings/keys
 
 # Get the deploy key by using Travis's stored variables to decrypt deploy_key.enc
 ENCRYPTED_KEY_VAR="encrypted_${ENCRYPTION_LABEL}_key"
@@ -58,7 +60,7 @@ chmod 600 deploy_key
 eval `ssh-agent -s`
 ssh-add deploy_key
 
-cd ~/out
+cd ../out
 
 # Now that we're all set up, we can push.
 git push $SSH_REPO $TARGET_BRANCH
