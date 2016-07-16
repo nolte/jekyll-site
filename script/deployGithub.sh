@@ -14,8 +14,14 @@ cd ..
 # Clone the existing gh-pages for this repo into out/
 # Create a new empty branch if gh-pages doesn't exist yet (should only happen on first deply)
 git clone $REPO out
+
+echo $(pwd)
+ls -all
+
 cd out
 git checkout $TARGET_BRANCH || git checkout --orphan $TARGET_BRANCH
+echo $(pwd)
+ls -all
 cd ..
 
 # Clean out existing contents
@@ -40,7 +46,7 @@ git commit -m "Deploy to GitHub Pages: ${SHA}"
 echo $(pwd)
 echo ls -all
 
-cd ./settings/keys
+cd $(pwd)/settings/keys
 
 # Get the deploy key by using Travis's stored variables to decrypt deploy_key.enc
 ENCRYPTED_KEY_VAR="encrypted_${ENCRYPTION_LABEL}_key"
