@@ -29,15 +29,25 @@ categories: jekyll update
  
 ### Build
  
- Der Build soll auf [Travis-Ci](https://travis-ci.org/){:target="_blank"} oder auf [CircleCi](https://circleci.com){:target="_blank"} stattfinden.
+ Der Build soll auf unterschiedlichen Plattformen ausgeführt werden.
 
 #### Travis CI
+ 
+ **URL:** [Travis-Ci](https://travis-ci.org/){:target="_blank"}
 
 
 #### Circle CI
-
+  
+  **URL:** [CircleCi](https://circleci.com){:target="_blank"}
+ 
+ [![Build Status](https://travis-ci.org/nolte/jekyll-site.svg?branch=master)](https://travis-ci.org/nolte/jekyll-site)
 
 #### Snap CI
+
+  **URL:** [snap-ci](https://snap-ci.com){:target="_blank"}
+
+ [![Build Status](https://snap-ci.com/nolte/jekyll-site/branch/master/build_image)](https://snap-ci.com/nolte/jekyll-site/branch/master) 
+
 
 
 ### Publishing
