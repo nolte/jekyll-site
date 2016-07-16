@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 set -e # halt script on error
 
-OURCE_BRANCH="master"
+SOURCE_BRANCH="master"
 TARGET_BRANCH="gh-pages"
 
 # Save some useful information
@@ -46,7 +46,7 @@ git commit -m "Deploy to GitHub Pages: ${SHA}"
 echo $(pwd)
 echo ls -all
 
-cd $(pwd)/settings/keys
+cd ~/jekyll-site/settings/keys
 
 # Get the deploy key by using Travis's stored variables to decrypt deploy_key.enc
 ENCRYPTED_KEY_VAR="encrypted_${ENCRYPTION_LABEL}_key"
@@ -57,6 +57,8 @@ openssl aes-256-cbc -K $ENCRYPTED_KEY -iv $ENCRYPTED_IV -in deploy_key.enc -out 
 chmod 600 deploy_key
 eval `ssh-agent -s`
 ssh-add deploy_key
+
+cd ~/out
 
 # Now that we're all set up, we can push.
 git push $SSH_REPO $TARGET_BRANCH
