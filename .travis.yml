@@ -7,8 +7,6 @@ before_install:
 
 install: bundle install
 
-
-
 script: jekyll build
 
 gemfile:
