@@ -3,6 +3,7 @@ name: Web Card
 # current version of the software
 version: 1.1.0
 
+baseurl: /jekyll-site
 
 exclude: ['README.md', 'LICENSE', 'bower.json', 'Gemfile.lock', 'Gemfile']
 

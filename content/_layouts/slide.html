@@ -8,15 +8,15 @@ layout: default
 	content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 <title>{{ page.title }}</title>
 
-<link rel="stylesheet" href="{{ site.github.url }}/assets/reveal/css/reveal.css">
-<link rel="stylesheet" href="{{ site.github.url }}/assets/reveal/css/theme/white.css" id="theme">
+<link rel="stylesheet" href="{{ site.baseurl }}/assets/reveal/css/reveal.css">
+<link rel="stylesheet" href="{{ site.baseurl }}/assets/reveal/css/theme/white.css" id="theme">
 
 
 <!-- Theme used for syntax highlighting of code -->
-<link rel="stylesheet" href="{{ site.github.url }}/assets/reveal/lib/css/zenburn.css">
+<link rel="stylesheet" href="{{ site.baseurl }}/assets/reveal/lib/css/zenburn.css">
 
 <!-- custome stuff -->
-<link rel="stylesheet" href="{{ site.github.url }}/assets/css/swingingIcon.css">
+<link rel="stylesheet" href="{{ site.baseurl }}/assets/css/swingingIcon.css">
 
 
 <!-- Printing and PDF exports -->
@@ -24,7 +24,7 @@ layout: default
 	var link = document.createElement('link');
 	link.rel = 'stylesheet';
 	link.type = 'text/css';
-	link.href = window.location.search.match(/print-pdf/gi) ? '{{ site.github.url }}/assets/reveal/css/print/pdf.css' : '{{ site.github.url }}/assets/reveal/css/print/paper.css';
+	link.href = window.location.search.match(/print-pdf/gi) ? '{{ site.baseurl }}/assets/reveal/css/print/pdf.css' : '{{ site.baseurl }}/assets/reveal/css/print/paper.css';
 	document.getElementsByTagName('head')[0].appendChild(link);
 </script>
 </head>
@@ -35,14 +35,14 @@ layout: default
          {{ content }}
           
           <section>
-               <h2><a href="{{ site.github.url }}/" >Back to Diary</a></h2>
+               <h2><a href="{{ site.baseurl }}/" >Back to Diary</a></h2>
           </section>
   
 		</div>
 	</div>
 
-	<script src="{{ site.github.url }}/assets/reveal/lib/js/head.min.js"></script>
-	<script src="{{ site.github.url }}/assets/reveal/js/reveal.js"></script>
+	<script src="{{ site.baseurl }}/assets/reveal/lib/js/head.min.js"></script>
+	<script src="{{ site.baseurl }}/assets/reveal/js/reveal.js"></script>
 
 	<script>
 		// More info https://github.com/hakimel/reveal.js#configuration
@@ -58,31 +58,31 @@ layout: default
 			// More info https://github.com/hakimel/reveal.js#dependencies
 			// More info https://github.com/hakimel/reveal.js#dependencies
 			dependencies : [ {
-				src : '{{ site.github.url }}/assets/reveal/lib/js/classList.js',
+				src : '{{ site.baseurl }}/assets/reveal/lib/js/classList.js',
 				condition : function() {
 					return !document.body.classList;
 				}
 			}, {
-				src : '{{ site.github.url }}/assets/reveal/plugin/markdown/marked.js',
+				src : '{{ site.baseurl }}/assets/reveal/plugin/markdown/marked.js',
 				condition : function() {
 					return !!document.querySelector('[data-markdown]');
 				}
 			}, {
-				src : '{{ site.github.url }}/assets/reveal/plugin/markdown/markdown.js',
+				src : '{{ site.baseurl }}/assets/reveal/plugin/markdown/markdown.js',
 				condition : function() {
 					return !!document.querySelector('[data-markdown]');
 				}
 			}, {
-				src : '{{ site.github.url }}/assets/reveal/plugin/highlight/highlight.js',
+				src : '{{ site.baseurl }}/assets/reveal/plugin/highlight/highlight.js',
 				async : true,
 				callback : function() {
 					hljs.initHighlightingOnLoad();
 				}
 			}, {
-				src : '{{ site.github.url }}/assets/reveal/plugin/zoom-js/zoom.js',
+				src : '{{ site.baseurl }}/assets/reveal/plugin/zoom-js/zoom.js',
 				async : true
 			}, {
-				src : '{{ site.github.url }}/assets/reveal/plugin/notes/notes.js',
+				src : '{{ site.baseurl }}/assets/reveal/plugin/notes/notes.js',
 				async : true
 			} ]
 		});
