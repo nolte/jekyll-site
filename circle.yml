@@ -15,20 +15,14 @@ machine:
     version:
       2.3.1
 
-checkout:
-  post:
-    - cd ./content
-  override:
-    - bundle exec rake build
-
 dependencies:
   pre:
-    - bundle install
-
+    - sh -c 'cd content && bundle install'
+    
 test:
   override:
-    - bundle exec rake rubocop
-    - bundle exec rake html_proofer
+    - sh -c 'cd content && bundle exec rake rubocop'
+    - sh -c 'cd content && bundle exec rake html_proofer'
 
 ## Custom notifications
 notify:
