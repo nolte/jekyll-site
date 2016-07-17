@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<!-- 
+  Test Header
+ --><html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Web Card</title>
+<!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+  <![endif]--><!-- Latest compiled and minified CSS --><link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+<!-- Optional theme --><link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
+<!--   <link href="/jekyll-site/assets/css/docs.min.css" rel="stylesheet"> --><!--   <link href="/jekyll-site/assets/css/style.css" rel="stylesheet"> --><style>
+  body {
+    padding-top: 2em;
+  }
+  </style>
+<script src="https://code.jquery.com/jquery-1.11.2.min.js"></script><!-- Latest compiled and minified JavaScript --><script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script><script src="/jekyll-site/assets/js/zeroClipboard/ZeroClipboard.js"></script><!-- add after bootstrap.min.css --><link rel="stylesheet" href="https://cdn.rawgit.com/afeld/bootstrap-toc/v0.4.0/dist/bootstrap-toc.min.css">
+<!-- add after bootstrap.min.js --><script src="https://cdn.rawgit.com/afeld/bootstrap-toc/v0.4.0/dist/bootstrap-toc.min.js"></script><link rel="stylesheet" href="/jekyll-site/assets/site/css/toc.css">
+<link rel="stylesheet" href="/jekyll-site/assets/site/css/customstyle.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/holder/2.9.3/holder.min.js"></script>
+</head>
+<body data-spy="scroll" data-target="#toc">
+<div class="container">
+<div class="container">
+<div class="navbar navbar-default">
+        <div class="container">
+          <div class="navbar-header">
+            <a class="navbar-brand" href="/jekyll-site/">Web Card</a>
+          </div>
+          <div id="navbar" class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+<li>
+                <a href="/jekyll-site/links.html">Links</a>
+              </li>
+             
+            </ul>
+</div>
+<!--/.nav-collapse -->
+        </div>
+<!--/.container-fluid -->
+</div>
+</div>
+<div class="container">
+<div class="container">
+<div class="row">
+	<div class="col-sm-8" style="padding-right:20px; border-right: 1px solid #ccc;" id="postConent">
+<h1>Was es nicht alles giebt ..</h1>
+<p>
+	dieser Jekyll Blog wird zurzeit auf <a href="https://travis-ci.org/nolte/jekyll-site">Travis-Ci</a>,<a href="https://circleci.com/gh/nolte/jekyll-site">Circle
+		CI</a> und <a href="https://snap-ci.com/nolte/jekyll-site/branch/master">Snap CI</a> gebaut.
+</p>
+<div class="row">
+	<div class="col-sm-4">
+		<div>
+			<strong><a href="https://travis-ci.org/">Travis-Ci</a></strong>
+		</div>
+		<div>
+			<a href="https://travis-ci.org/nolte/jekyll-site"><img src="https://travis-ci.org/nolte/jekyll-site.svg?branch=master" alt="status"></a>
+		</div>
+	</div>
+	<div class="col-sm-4">
+		<div>
+			<strong><a href="https://circleci.com/">Circle CI</a></strong>
+		</div>
+		<div>
+			<a href="https://circleci.com/gh/nolte/jekyll-site/tree/master"><img src="https://circleci.com/gh/nolte/jekyll-site.svg?style=shield&amp;circle-token=:circle-token" alt="status"></a>
+		</div>
+	</div>
+	<div class="col-sm-4">
+		<div>
+			<strong><a href="https://snap-ci.com/">Snap CI</a></strong>
+		</div>
+		<div>
+			<a href="https://snap-ci.com/nolte/jekyll-site/branch/master"><img src="https://snap-ci.com/nolte/jekyll-site/branch/master/build_image" alt="status"></a>
+		</div>
+	</div>
+</div>
+<p>Der versuch ist es, sich für möglichst ein System zu entscheiden...</p>
+
+<table class="table">
+<thead><tr>
+<th>Funktion</th>
+			<th><a href="#travisci">Travis-CI</a></th>
+			<th><a href="#circleci">Circle CI</a></th>
+			<th><a href="#snapci">Snap CI</a></th>
+		</tr></thead>
+<tr>
+<th>Config als Datei</th>
+		<th><img class="emoji" title=":white_check_mark:" alt=":white_check_mark:" src="https://assets-cdn.github.com/images/icons/emoji/unicode/2705.png" height="20" width="20" align="absmiddle"></th>
+		<th><img class="emoji" title=":white_check_mark:" alt=":white_check_mark:" src="https://assets-cdn.github.com/images/icons/emoji/unicode/2705.png" height="20" width="20" align="absmiddle"></th>
+		<th><img class="emoji" title=":x:" alt=":x:" src="https://assets-cdn.github.com/images/icons/emoji/unicode/274c.png" height="20" width="20" align="absmiddle"></th>
+	</tr>
+<tr>
+<th>Ignore Branche</th>
+		<th><img class="emoji" title=":white_check_mark:" alt=":white_check_mark:" src="https://assets-cdn.github.com/images/icons/emoji/unicode/2705.png" height="20" width="20" align="absmiddle"></th>
+		<th>
+<img class="emoji" title=":interrobang:" alt=":interrobang:" src="https://assets-cdn.github.com/images/icons/emoji/unicode/2049.png" height="20" width="20" align="absmiddle"> (über eigene circle.yml)</th>
+		<th>
+<img class="emoji" title=":interrobang:" alt=":interrobang:" src="https://assets-cdn.github.com/images/icons/emoji/unicode/2049.png" height="20" width="20" align="absmiddle"> (manuell)</th>
+	</tr>
+<tr>
+<th>Slack Notification</th>
+		<th><img class="emoji" title=":white_check_mark:" alt=":white_check_mark:" src="https://assets-cdn.github.com/images/icons/emoji/unicode/2705.png" height="20" width="20" align="absmiddle"></th>
+		<th><img class="emoji" title=":white_check_mark:" alt=":white_check_mark:" src="https://assets-cdn.github.com/images/icons/emoji/unicode/2705.png" height="20" width="20" align="absmiddle"></th>
+		<th><img class="emoji" title=":white_check_mark:" alt=":white_check_mark:" src="https://assets-cdn.github.com/images/icons/emoji/unicode/2705.png" height="20" width="20" align="absmiddle"></th>
+	</tr>
+<tr>
+<th>Ruby Build</th>
+		<th><img class="emoji" title=":white_check_mark:" alt=":white_check_mark:" src="https://assets-cdn.github.com/images/icons/emoji/unicode/2705.png" height="20" width="20" align="absmiddle"></th>
+		<th><img class="emoji" title=":white_check_mark:" alt=":white_check_mark:" src="https://assets-cdn.github.com/images/icons/emoji/unicode/2705.png" height="20" width="20" align="absmiddle"></th>
+		<th><img class="emoji" title=":white_check_mark:" alt=":white_check_mark:" src="https://assets-cdn.github.com/images/icons/emoji/unicode/2705.png" height="20" width="20" align="absmiddle"></th>
+	</tr>
+<tr>
+<th>Java Build</th>
+		<th></th>
+		<th></th>
+		<th></th>
+	</tr>
+<tr>
+<th>Docker Build</th>
+		<th></th>
+		<th></th>
+		<th></th>
+	</tr>
+<tbody></tbody>
+</table>
+<h2 id="travisci">Travis-CI</h2>
+<p>nett <img class="emoji" title=":smile:" alt=":smile:" src="https://assets-cdn.github.com/images/icons/emoji/unicode/1f604.png" height="20" width="20" align="absmiddle"></p>
+<h2 id="circleci">Circle CI</h2>
+<p>fein <img class="emoji" title=":smile:" alt=":smile:" src="https://assets-cdn.github.com/images/icons/emoji/unicode/1f604.png" height="20" width="20" align="absmiddle"></p>
+<h2 id="snapci">Snap CI</h2>
+<p>lass uns mal was testen <img class="emoji" title=":sunglasses:" alt=":sunglasses:" src="https://assets-cdn.github.com/images/icons/emoji/unicode/1f60e.png" height="20" width="20" align="absmiddle"></p>
+</div>
+	<div class="col-sm-4">
+		<nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="toc" data-spy="affix" data-toggle="toc"></nav>
+</div>
+</div>
+</div>
+<script>
+  $( document ).ready(function() {
+	  $( '<div class="divider"></div>' ).insertAfter( "h1,h2,h3" );
+    });
+</script>
+</div>
+<div class="container">
+<footer class="footer"><p>footer</p>
+      </footer>
+</div>
+</div>
+  <script>
+  $( document ).ready(function() {
+
+    });
+ 
+    </script><script>
+    $(function () {
+        client = new ZeroClipboard($(".copy_btn"));
+    })
+</script>
+</body>
+</html>

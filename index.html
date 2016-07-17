@@ -16,7 +16,6 @@
 
   <!-- Latest compiled and minified CSS -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
-  
 
   <!-- Optional theme -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
@@ -41,6 +40,8 @@
 <script src="https://cdn.rawgit.com/afeld/bootstrap-toc/v0.4.0/dist/bootstrap-toc.min.js"></script>
 <link rel="stylesheet" href="/jekyll-site/assets/site/css/toc.css">
 <link rel="stylesheet" href="/jekyll-site/assets/site/css/customstyle.css">
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/holder/2.9.3/holder.min.js"></script>
 
 </head>
 
@@ -77,6 +78,8 @@
 					
 					<li>(July 17, 2016) <a href="/jekyll-site/jekyll/update/2016/07/17/git-remove-sensitive-data.html">Git remove sensitive data</a> 
 					</li> 
+					<li>(April 17, 2016) <a href="/jekyll-site/jekyll/update/2016/04/17/compare-build-servers.html">Vergleich Build Systemen</a> 
+					</li> 
 					<li>(March 17, 2016) <a href="/jekyll-site/jekyll/update/2016/03/17/startup-with-jekyll-ci.html">Jekyll Ci Playground</a> 
 					</li> 
 				</ul>
@@ -86,12 +89,18 @@
 	<div class="col-sm-6">
 		<div class="panel panel-default">
 			<div class="panel-heading">
-				<strong>Einleitung</strong>
+				<strong>Build Status</strong>
 			</div>
 			<div class="panel-body">
-			
-			Hallo
-			
+				<div>
+					<a href="https://travis-ci.org/nolte/jekyll-site" target="_blank" ><img src="https://travis-ci.org/nolte/jekyll-site.svg?branch=master" alt="status"></a>
+				</div>
+				<div>
+					<a href="https://circleci.com/gh/nolte/jekyll-site/tree/master" target="_blank"><img src="https://circleci.com/gh/nolte/jekyll-site.svg?style=shield&circle-token=:circle-token" alt="status"></a>
+				</div>
+				<div>
+					<a href="https://snap-ci.com/nolte/jekyll-site/branch/master" target="_blank"><img src="https://snap-ci.com/nolte/jekyll-site/branch/master/build_image" alt="status"></a>
+				</div>
 			</div>
 
 		</div>
