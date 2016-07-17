@@ -7,7 +7,6 @@ gem 'jekyll-sitemap'
 gem 'colorize'
 gem 'rubocop'
 gem 'rake'
-# gem 'github-pages', group: :jekyll_plugins
 gem 'activesupport', '< 5.0'
-gem 'business' 
+gem 'business'
 gem 'html-proofer'
