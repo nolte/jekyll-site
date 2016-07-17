@@ -17,11 +17,18 @@ machine:
 
 checkout:
   post:
-    - bash script/cibuild.sh  
+    - cd ./content
+  override:
+    - bundle exec rake build
+
+dependencies:
+  pre:
+    - bundle install
 
 test:
   override:
-    - bash script/citest.sh  
+    - bundle exec rake rubocop
+    - bundle exec rake html_proofer
 
 ## Custom notifications
 notify:
