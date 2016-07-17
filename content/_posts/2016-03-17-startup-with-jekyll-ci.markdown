@@ -30,6 +30,7 @@ categories: jekyll update
 ### Build
  
  Der Build soll auf unterschiedlichen Plattformen ausgeführt werden.
+ Alle Build Jobs nutzen [htmlproofer](https://github.com/gjtorikian/html-proofer) zum überprüfen der generierten Links.
 
 #### Travis CI
  
