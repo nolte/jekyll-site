@@ -3,6 +3,9 @@ rvm:
 - 2.3.1
 gemfile: content/Gemfile
 
+before_script:
+- chmod +x ./script/deployGithub.sh
+
 script: 
 - sh -c 'cd content && bundle exec rake rubocop'
 - sh -c 'cd content && bundle exec rake html_proofer'
