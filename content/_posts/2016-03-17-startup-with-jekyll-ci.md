@@ -29,28 +29,38 @@ categories: jekyll update
  
 ### Build
  
- Der Build soll auf unterschiedlichen Plattformen ausgeführt werden.
+ Der Build soll auf unterschiedlichen Plattformen ausgeführt werden.  
  Alle Build Jobs nutzen [htmlproofer](https://github.com/gjtorikian/html-proofer) zum überprüfen der generierten Links.
-
-#### Travis CI
  
- **URL:** [Travis-Ci](https://travis-ci.org/){:target="_blank"}
-
- [![Build Status](https://travis-ci.org/nolte/jekyll-site.svg?branch=master)](https://travis-ci.org/nolte/jekyll-site)
-
-#### Circle CI
-  
-  **URL:** [CircleCi](https://circleci.com){:target="_blank"}
-  
-  [![Build Status](https://circleci.com/gh/nolte/jekyll-site.svg?style=shield&circle-token=:circle-token)](https://circleci.com/gh/nolte/jekyll-site)
- 
-
-#### Snap CI
-
-  **URL:** [snap-ci](https://snap-ci.com){:target="_blank"}
-
- [![Build Status](https://snap-ci.com/nolte/jekyll-site/branch/master/build_image)](https://snap-ci.com/nolte/jekyll-site/branch/master) 
-
+<div class="row">
+	<div class="col-sm-4">
+	<div>
+    <strong><a href= "https://travis-ci.org/" >Travis-Ci</a></strong>
+    </div>
+    <div>
+      <a href="https://travis-ci.org/nolte/jekyll-site"><img src="https://travis-ci.org/nolte/jekyll-site.svg?branch=master" alt="status" ></a>
+    </div>
+    <div>
+    <p> Deploy To Github Pages</p>
+    </div>
+    </div>
+	<div class="col-sm-4">
+	<div>
+    <strong><a href= "https://circleci.com/" >Circle CI</a></strong>
+    </div>
+    <div>
+    <a href="https://circleci.com/gh/nolte/jekyll-site/tree/master"><img src="https://circleci.com/gh/nolte/jekyll-site.svg?style=shield&circle-token=:circle-token" alt="status"></a>
+    </div>
+    </div>
+	<div class="col-sm-4">
+	<div>
+    <strong><a href= "https://snap-ci.com/" >Snap CI</a></strong>
+    </div>
+    <div>
+    <a href="https://snap-ci.com/nolte/jekyll-site/branch/master"><img src="https://snap-ci.com/nolte/jekyll-site/branch/master/build_image" alt="status"></a>
+    </div>
+    </div>
+</div>
 
 
 ### Publishing

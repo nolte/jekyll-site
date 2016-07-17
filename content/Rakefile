@@ -35,11 +35,12 @@ end
 
 task :html_proofer do
   Rake::Task['build'].invoke
-  # host_regex = Regexp.new(site_domain(config_file))
   puts 'Running html proofer...'.yellow.bold
-  url_swap = { '/jekyll-site/' => '/' }
+  url_swap = { %r{^\/jekyll-site\/} => '/' }
+  url_ignore = []
+  # url_ignore.push 'asciiflow.com'
   opts = { log_level: ':debug',
-           url_ignore: ['asciiflow.com'],
+           url_ignore: url_ignore,
            url_swap: url_swap }
   HTMLProofer.check_directory('./_site', opts).run
 end

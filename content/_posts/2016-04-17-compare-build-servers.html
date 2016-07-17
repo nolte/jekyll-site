@@ -1,0 +1,94 @@
+---
+layout: post
+title:  "Vergleich Build Systemen"
+date:   2016-04-17 20:31:11
+categories: jekyll update
+---
+
+<h1>Was es nicht alles giebt ..</h1>
+<p>
+	dieser Jekyll Blog wird zurzeit auf <a href="https://travis-ci.org/nolte/jekyll-site">Travis-Ci</a>,<a href="https://circleci.com/gh/nolte/jekyll-site">Circle
+		CI</a> und <a href="https://snap-ci.com/nolte/jekyll-site/branch/master">Snap CI</a> gebaut.
+<div class="row">
+	<div class="col-sm-4">
+		<div>
+			<strong><a href="https://travis-ci.org/">Travis-Ci</a></strong>
+		</div>
+		<div>
+			<a href="https://travis-ci.org/nolte/jekyll-site"><img src="https://travis-ci.org/nolte/jekyll-site.svg?branch=master" alt="status"></a>
+		</div>
+	</div>
+	<div class="col-sm-4">
+		<div>
+			<strong><a href="https://circleci.com/">Circle CI</a></strong>
+		</div>
+		<div>
+			<a href="https://circleci.com/gh/nolte/jekyll-site/tree/master"><img src="https://circleci.com/gh/nolte/jekyll-site.svg?style=shield&circle-token=:circle-token" alt="status"></a>
+		</div>
+	</div>
+	<div class="col-sm-4">
+		<div>
+			<strong><a href="https://snap-ci.com/">Snap CI</a></strong>
+		</div>
+		<div>
+			<a href="https://snap-ci.com/nolte/jekyll-site/branch/master"><img src="https://snap-ci.com/nolte/jekyll-site/branch/master/build_image" alt="status"></a>
+		</div>
+	</div>
+</div>
+<p>Der versuch ist es, sich für möglichst ein System zu entscheiden...</p>
+
+<table class="table">
+	<thead>
+		<tr>
+			<th>Funktion</th>
+			<th><a href="#travisci">Travis-CI</a></th>
+			<th><a href="#circleci">Circle CI</a></th>
+			<th><a href="#snapci">Snap CI</a></th>
+		</tr>
+	</thead>
+	<tr>
+		<th>Config als Datei</th>
+		<th>:white_check_mark:</th>
+		<th>:white_check_mark:</th>
+		<th>:x:</th>
+	</tr>
+	<tr>
+		<th>Ignore Branche</th>
+		<th>:white_check_mark:</th>
+		<th>:interrobang: (über eigene circle.yml)</th>
+		<th>:interrobang: (manuell)</th>
+	</tr>
+	<tr>
+		<th>Slack Notification</th>
+		<th>:white_check_mark:</th>
+		<th>:white_check_mark:</th>
+		<th>:white_check_mark:</th>
+	</tr>
+	<tr>
+		<th>Ruby Build</th>
+		<th>:white_check_mark:</th>
+		<th>:white_check_mark:</th>
+		<th>:white_check_mark:</th>
+	</tr>
+	<tr>
+		<th>Java Build</th>
+		<th></th>
+		<th></th>
+		<th></th>
+	</tr>	
+	<tr>
+		<th>Docker Build</th>
+		<th></th>
+		<th></th>
+		<th></th>
+	</tr>		
+	<tbody>
+	</tbody>
+</table>
+
+<h2 id="travisci">Travis-CI</h2>
+<p>nett :smile:</p>
+<h2 id="circleci">Circle CI</h2>
+<p>fein :smile:</p>
+<h2 id="snapci">Snap CI</h2>
+<p>lass uns mal was testen :sunglasses:</p>

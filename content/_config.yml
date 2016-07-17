@@ -12,6 +12,5 @@ gems:
   - jemoji
   - jekyll-redirect-from
   - jekyll-sitemap
-  - business
 
 emptyArray: []          
