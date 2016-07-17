@@ -2,7 +2,7 @@ general:
   branches:
     ignore:
       - gh-pages # list of branches to ignore
-      - /release\/.*/ # or ignore regexes
+        
 
 ## Customize the test machine
 machine:
