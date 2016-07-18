@@ -10,6 +10,7 @@ module Jekyll
         value = ENV['JEKYLL_GIT_BRANCH']
       else
         value = `git rev-parse --abbrev-ref HEAD`
+        value = value.strip!
       end
       print value
       currentFolder = `echo $(pwd)`
@@ -17,7 +18,7 @@ module Jekyll
       print `git rev-parse --abbrev-ref HEAD`
       print `git config --list`
       print `git --version`
-      site.config['branche'] = value.strip!
+      site.config['branche'] = value
 
       site.pages.each do | page |
         cmd = 'git log --pretty=oneline --abbrev-commit --pretty=format:"%H" -1 ' + page.path
