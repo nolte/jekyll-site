@@ -25,7 +25,10 @@ end
 # Rake Jekyll tasks
 task :build do
   puts 'Building site...'.yellow.bold
-  Jekyll::Commands::Build.process(profile: true)
+  #
+  opts = { profile: true,
+  destination: ENV['JEKYLL_DESTINATION'] } 
+  Jekyll::Commands::Build.process(opts)
 end
 
 task :clean do

@@ -72,7 +72,6 @@ module Jekyll
 
         if @ditaa_exists
           # only render the new blocks
-          ditaa_path = `which ditaa`
           if not File.exists?(png_path)
             args = ' ' + @ditaa_options + ' -o '
             if ! @@debug 
@@ -81,7 +80,8 @@ module Jekyll
             f = Tempfile.new('ditaa')
             f.write(source)
             f.close
-            @png_exists = system('java -jar ' + ditaa_path.to_s + ' ' + f.path + ' ' + png_path + args)
+            # todo read the ditaa path from system
+            @png_exists = system('java -jar /usr/bin/ditaa ' + f.path + ' ' + png_path + args)
             f.unlink  # cleanup of temporary file
           end
         end

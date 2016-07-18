@@ -1,11 +1,26 @@
-jekyll: 
-#  image: jekyll/jekyll:pages
-  build: .
-  expose:
-    - 4000
-  ports: 
-    - 127.0.0.1:4000:4000    
+sitedata:
+  image: busybox
   volumes:
     - ./content:/src
-    - /tmp/content:/src/_site
+
+htmlcontent:
+  image: busybox
+  volumes:
+    - /usr/share/nginx/html 
+
+jekyll: 
+  build: .
+  environment:
+    - JEKYLL_DESTINATION=/usr/share/nginx/html
+  volumes_from:
+    - sitedata
+    - htmlcontent
   command: "build"  
+  
+  
+web:
+  image: nginx
+  volumes_from:
+    - htmlcontent
+  ports:
+    - 80:80  
