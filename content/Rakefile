@@ -13,7 +13,7 @@ Encoding.default_external = Encoding::UTF_8
 Encoding.default_internal = Encoding::UTF_8
 
 # Do not touch below this line
-RuboCop::RakeTask.new
+# RuboCop::RakeTask.new
 
 # Extend string to allow for bold text.
 class String
@@ -26,9 +26,9 @@ end
 task :build do
   puts 'Building site...'.yellow.bold
   if ENV['JEKYLL_WATCH'] == 'true'
-    opts = { profile: true, destination: ENV['JEKYLL_DESTINATION'],source: ENV['JEKYLL_SOURCE'], watch: '' }
+    opts = { profile: true, destination: ENV['JEKYLL_DESTINATION'], watch: '' }
   else
-    opts = { profile: true, destination: ENV['JEKYLL_DESTINATION'],source: ENV['JEKYLL_SOURCE'] }
+    opts = { profile: true, destination: ENV['JEKYLL_DESTINATION'] }
   end
 
   puts opts.to_s.yellow.bold
