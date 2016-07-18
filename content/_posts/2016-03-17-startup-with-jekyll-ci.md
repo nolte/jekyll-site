@@ -40,7 +40,7 @@ categories: jekyll
     <strong><a href= "https://travis-ci.org/" >Travis-Ci</a></strong>
     </div>
     <div>
-      <a href="https://travis-ci.org/nolte/jekyll-site"><img src="https://travis-ci.org/nolte/jekyll-site.svg?branch=master" alt="status" ></a>
+      <a href="https://travis-ci.org/nolte/jekyll-site"><img src="https://travis-ci.org/nolte/jekyll-site.svg?branch={{ site.branche }}" alt="status" ></a>
     </div>
     <div>
     <p> Deploy To Github Pages</p>
@@ -51,7 +51,7 @@ categories: jekyll
     <strong><a href= "https://circleci.com/" >Circle CI</a></strong>
     </div>
     <div>
-    <a href="https://circleci.com/gh/nolte/jekyll-site/tree/master"><img src="https://circleci.com/gh/nolte/jekyll-site.svg?style=shield&circle-token=:circle-token" alt="status"></a>
+    <a href="https://circleci.com/gh/nolte/jekyll-site/tree/{{ site.branche }}"><img src="https://circleci.com/gh/nolte/jekyll-site/tree/{{ site.branche }}.svg?style=shield&circle-token=:circle-token" alt="status"></a>
     </div>
     </div>
 	<div class="col-sm-4">
@@ -59,7 +59,10 @@ categories: jekyll
     <strong><a href= "https://snap-ci.com/" >Snap CI</a></strong>
     </div>
     <div>
-    <a href="https://snap-ci.com/nolte/jekyll-site/branch/master"><img src="https://snap-ci.com/nolte/jekyll-site/branch/master/build_image" alt="status"></a>
+    <a href="https://snap-ci.com/nolte/jekyll-site/branch/{{ site.branche }}"><img src="https://snap-ci.com/nolte/jekyll-site/branch/{{ site.branche }}/build_image" alt="status"></a>
+    </div>
+    <div>
+    <p> Leider nicht mehr nutzbar seit der umstellung auf Docker Builds :-1:</p>
     </div>
     </div>
 </div>

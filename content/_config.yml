@@ -6,6 +6,8 @@ version: 1.1.0
 ditaa_output_directory: /assets/images/ditaa
 # ditaa_debug_mode: true
 
+branche: ditaa-integration 
+
 baseurl: /jekyll-site
 
 exclude: ['README.md', 'LICENSE', 'bower.json', 'Gemfile.lock', 'Gemfile']
