@@ -19,8 +19,9 @@ dependencies:
 
 test:
   override:
-    - docker run -e JEKYLL_DESTINATION=/tmp nolte/jekyll -c "rubocop"
-    - docker run -e JEKYLL_DESTINATION=/tmp nolte/jekyll -c "html_proofer"
+    - docker run -v /tmp/content:/tmp/jekyll -e JEKYLL_DESTINATION=/tmp/jekyll nolte/jekyll -c "build"
+    - docker run -v /tmp/content:/tmp/jekyll -e JEKYLL_DESTINATION=/tmp/jekyll nolte/jekyll -c "rubocop"
+    - docker run -v /tmp/content:/tmp/jekyll -e JEKYLL_DESTINATION=/tmp/jekyll nolte/jekyll -c "html_proofer"
 
 ## Custom notifications
 notify:
