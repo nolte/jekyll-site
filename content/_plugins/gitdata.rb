@@ -4,8 +4,10 @@ module Jekyll
     safe true
 
     def generate(site)
-      print 'halllo \n'
+      print 'Current Branch: '
       value = `git rev-parse --abbrev-ref HEAD`
+      print value
+      print "\n"
       #value = `echo $(pwd)`
       site.config['branche'] = value.strip!
 
