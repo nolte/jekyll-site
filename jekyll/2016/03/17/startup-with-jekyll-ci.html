@@ -104,37 +104,52 @@
  Alle Build Jobs nutzen <a href="https://github.com/gjtorikian/html-proofer">htmlproofer</a> zum überprüfen der generierten Links.</p>
 
 <div class="row">
-	<div class="col-sm-4">
-	<div>
-    <strong><a href="https://travis-ci.org/">Travis-Ci</a></strong>
-    </div>
-    <div>
-      <a href="https://travis-ci.org/nolte/jekyll-site"><img src="https://travis-ci.org/nolte/jekyll-site.svg?branch=ditaa-integration" alt="status"></a>
-    </div>
-    <div>
-    <p> Deploy To Github Pages</p>
-    </div>
-    </div>
-	<div class="col-sm-4">
-	<div>
-    <strong><a href="https://circleci.com/">Circle CI</a></strong>
-    </div>
-    <div>
-    <a href="https://circleci.com/gh/nolte/jekyll-site/tree/ditaa-integration"><img src="https://circleci.com/gh/nolte/jekyll-site/tree/ditaa-integration.svg?style=shield&amp;circle-token=:circle-token" alt="status"></a>
-    </div>
-    </div>
-	<div class="col-sm-4">
-	<div>
-    <strong><a href="https://snap-ci.com/">Snap CI</a></strong>
-    </div>
-    <div>
-    <a href="https://snap-ci.com/nolte/jekyll-site/branch/ditaa-integration"><img src="https://snap-ci.com/nolte/jekyll-site/branch/ditaa-integration/build_image" alt="status"></a>
-    </div>
-    <div>
-    <p> Leider nicht mehr nutzbar seit der umstellung auf Docker Builds <img class="emoji" title=":-1:" alt=":-1:" src="https://assets-cdn.github.com/images/icons/emoji/unicode/1f44e.png" height="20" width="20" align="absmiddle"></p>
-    </div>
-    </div>
+  <div class="col-sm-4">
+    <p><strong><a href="https://travis-ci.org/">Travis-Ci</a></strong><br>
+ <a href="https://travis-ci.org/nolte/jekyll-site"><img src="https://travis-ci.org/nolte/jekyll-site.svg?branch=ditaa-integration" alt="Build Status"></a><br>
+ Deploy To Github Pages</p>
+  </div>
+  <div class="col-sm-4">
+    <p><strong><a href="https://circleci.com/">Circle CI</a></strong><br>
+ <a href="https://circleci.com/gh/nolte/jekyll-site/tree/ditaa-integration"><img src="https://circleci.com/gh/nolte/jekyll-site/tree/ditaa-integration.svg?style=shield&amp;circle-token=:circle-token" alt="Build Status"></a></p>
+  </div>
+  <div class="col-sm-4">
+    <p><strong><a href="https://snap-ci.com/">Snap CI</a></strong><br>
+ <a href="https://snap-ci.com/nolte/jekyll-site/branch/ditaa-integration"><img src="https://snap-ci.com/nolte/jekyll-site/branch/ditaa-integration/build_image" alt="Build Status"></a><br>
+ Leider nicht mehr nutzbar seit der umstellung auf Docker Builds <img class="emoji" title=":-1:" alt=":-1:" src="https://assets-cdn.github.com/images/icons/emoji/unicode/1f44e.png" height="20" width="20" align="absmiddle"></p>
+  </div>
 </div>
+
+<h4 id="docker-als-buildumgebung">Docker als Buildumgebung</h4>
+
+<p>die umstellung hat die builds sehr verlangsamt …</p>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>CI System</th>
+      <th>ohne docker</th>
+      <th>mit docker und ditaa</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Snap CI</td>
+      <td>~ 40 sec</td>
+      <td>/</td>
+    </tr>
+    <tr>
+      <td>Travis-Ci</td>
+      <td>~ 1:09 Min</td>
+      <td>~ 3:20 Min</td>
+    </tr>
+    <tr>
+      <td>Circle CI</td>
+      <td>~3:08 Min</td>
+      <td>~ 5:22 Min</td>
+    </tr>
+  </tbody>
+</table>
 
 <h3 id="publishing">Publishing</h3>
 
