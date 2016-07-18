@@ -2,7 +2,7 @@
 layout: post
 title: "Git remove sensitive data"
 date: 2016-07-17 20:31:11
-categories: jekyll update
+categories: git
 ---
 
 # Remove sensitive data

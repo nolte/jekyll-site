@@ -1,4 +1,3 @@
 /_site
-Gemfile.lock
-/dist/bootstrap
-/dist/jquery
+/assets/images/ditaa
+/Gemfile.lock
