@@ -12,6 +12,7 @@ jekyll:
   build: .
   environment:
     - JEKYLL_DESTINATION=/usr/share/nginx/html
+    - JEKYLL_WATCH=true
   volumes_from:
     - sitedata
     - htmlcontent

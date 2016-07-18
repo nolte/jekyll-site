@@ -2,7 +2,7 @@
 layout: post
 title:  "Jekyll Ci Playground"
 date:   2016-03-17 20:31:11
-categories: jekyll update
+categories: jekyll
 ---
 
 # My First Post
@@ -25,7 +25,9 @@ categories: jekyll update
 
  * [jekyll](https://jekyllrb.com/){:target="_blank"}
  * [reveal.js](http://lab.hakim.se/reveal-js/){:target="_blank"}
- * [bootstrap](https://getbootstrap.com/){:target="_blank"} 
+ * [bootstrap](https://getbootstrap.com/){:target="_blank"}
+ * [ditaa](http://ditaa.sourceforge.net/){:target="_blank"} 
+ 
  
 ### Build
  
@@ -61,17 +63,6 @@ categories: jekyll update
     </div>
     </div>
 </div>
-
-
-{% ditaa %}
-/----+  DAAP /-----+-----+ Audio  /--------+
-| PC |<------| RPi | MPD |------->| Stereo |
-+----+       +-----+-----+        +--------+
-   |                 ^ ^
-   |     ncmpcpp     | | mpdroid /---------+
-   +--------=--------+ +----=----| Nexus S |
-                                 +---------+
-{% endditaa %}
 
 
 ### Publishing

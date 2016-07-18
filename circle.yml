@@ -6,14 +6,11 @@ general:
 
 ## Customize the test machine
 machine:
+  services:
+    - docker
 
   timezone:
     Europe/Berlin # List of timezones http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
-
-  # Version of ruby to use
-  ruby:
-    version:
-      2.3.1
 
 dependencies:
   pre:
@@ -21,8 +18,8 @@ dependencies:
     
 test:
   override:
-    - sh -c 'cd content && bundle exec rake rubocop'
-    - sh -c 'cd content && bundle exec rake html_proofer'
+    - docker run -e JEKYLL_DESTINATION=/tmp nolte/jekyll -c "rubocop"
+    - docker run -e JEKYLL_DESTINATION=/tmp nolte/jekyll -c "html_proofer"
 
 ## Custom notifications
 notify:

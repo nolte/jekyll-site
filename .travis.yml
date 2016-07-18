@@ -15,8 +15,8 @@ env:
 branches:
   only:
   - master
-after_success:
-- "./script/deployGithub.sh"
+# after_success:
+# - "./script/deployGithub.sh"
 notifications:
   slack:
     rooms:
