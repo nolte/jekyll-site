@@ -25,7 +25,14 @@ end
 # Rake Jekyll tasks
 task :build do
   puts 'Building site...'.yellow.bold
-  Jekyll::Commands::Build.process(profile: true)
+  if ENV['JEKYLL_WATCH'] == 'true'
+    opts = { profile: true, destination: ENV['JEKYLL_DESTINATION'], watch: '' }
+  else
+    opts = { profile: true, destination: ENV['JEKYLL_DESTINATION'] }
+  end
+
+  puts opts.to_s.yellow.bold
+  Jekyll::Commands::Build.process(opts)
 end
 
 task :clean do
@@ -42,5 +49,5 @@ task :html_proofer do
   opts = { log_level: ':debug',
            url_ignore: url_ignore,
            url_swap: url_swap }
-  HTMLProofer.check_directory('./_site', opts).run
+  HTMLProofer.check_directory(ENV['JEKYLL_DESTINATION'], opts).run
 end

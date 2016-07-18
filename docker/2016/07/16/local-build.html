@@ -67,49 +67,37 @@
 </div>
 </div>
 <div class="container">
+<div class="container">
 <div class="row">
-	<div class="col-sm-6">
-		<div class="panel panel-default">
-			<div class="panel-heading">
-				<strong>Posts</strong>
-			</div>
-			<div class="panel-body">
-				<ul>
-					
-					<li>(July 17, 2016) <a href="/git/2016/07/17/git-remove-sensitive-data.html">Git remove sensitive data</a> 
-					</li> 
-					<li>(July 16, 2016) <a href="/docker/2016/07/16/local-build.html">Lokaler Build</a> 
-					</li> 
-					<li>(July 16, 2016) <a href="/jekyll/2016/07/16/ditaa-integration.html">Ditaa Integration</a> 
-					</li> 
-					<li>(April 17, 2016) <a href="/jekyll/ci/2016/04/17/compare-build-servers.html">Vergleich Build Systemen</a> 
-					</li> 
-					<li>(March 17, 2016) <a href="/jekyll/2016/03/17/startup-with-jekyll-ci.html">Jekyll Ci Playground</a> 
-					</li> 
-				</ul>
-			</div>
-		</div>
-	</div>
-	<div class="col-sm-6">
-		<div class="panel panel-default">
-			<div class="panel-heading">
-				<strong>Build Status</strong>
-			</div>
-			<div class="panel-body">
-				<div>
-					<a href="https://travis-ci.org/nolte/jekyll-site" target="_blank" ><img src="https://travis-ci.org/nolte/jekyll-site.svg?branch=master" alt="status"></a>
-				</div>
-				<div>
-					<a href="https://circleci.com/gh/nolte/jekyll-site/tree/master" target="_blank"><img src="https://circleci.com/gh/nolte/jekyll-site.svg?style=shield&circle-token=:circle-token" alt="status"></a>
-				</div>
-				<div>
-					<a href="https://snap-ci.com/nolte/jekyll-site/branch/master" target="_blank"><img src="https://snap-ci.com/nolte/jekyll-site/branch/master/build_image" alt="status"></a>
-				</div>
-			</div>
+	<div class="col-sm-8" style="padding-right:20px; border-right: 1px solid #ccc;" id = "postConent"><h1 id="lokales-entwickeln">Lokales entwickeln</h1>
 
-		</div>
+<h2 id="docker-compose-file">Docker Compose File</h2>
+
+<p>Zum leichten starten giebt es ein Docker Compose File im Repository, dieses verbindet die Docker Container.</p>
+
+<p><img src="/assets/images/ditaa/ditaa-65f5309425cc7c810bac87e69d9e3b08.png" alt="ditaa-65f5309425cc7c810bac87e69d9e3b08.png" /></p>
+
+<h2 id="docker-build">Docker Build</h2>
+
+<div class="language-bash highlighter-rouge"><pre class="highlight"><code> 
+  docker build -t nolte/jekyll . 
+  docker run -e <span class="nv">JEKYLL_DESTINATION</span><span class="o">=</span>/tmp nolte/jekyll -c <span class="s2">"html_proofer"</span>
+  docker run -v /tmp/content:/tmp/jekyll -e <span class="nv">JEKYLL_DESTINATION</span><span class="o">=</span>/tmp/jekyll nolte/jekyll -c <span class="s2">"html_proofer"</span>
+
+</code></pre>
+</div>
+</div>
+	<div class="col-sm-4">
+		<nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="toc" data-spy="affix" data-toggle="toc"></nav>
 	</div>
 </div>
+</div>
+<script>
+  $( document ).ready(function() {
+	  $( '<div class="divider"></div>' ).insertAfter( "h1,h2,h3" );
+    });
+</script>
+    
 
 </div>
 <div class="container">
