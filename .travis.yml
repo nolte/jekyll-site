@@ -9,9 +9,9 @@ before_script:
 before_install:
 - docker pull nolte/jekyll-build-environment:latest
 script: 
-- docker run -v $(pwd):/src -v /tmp/jekyll:/tmp/jekyll -w /src/content -e GIT_DISCOVERY_ACROSS_FILESYSTEM=1 -e JEKYLL_DESTINATION=/tmp/jekyll -e JEKYLL_GIT_BRANCH=master nolte/jekyll-build-environment:latest -c "build"
+- docker run -v $(pwd):/src -v /tmp/jekyll:/tmp/jekyll -w /src/content -e GIT_DISCOVERY_ACROSS_FILESYSTEM=1 -e JEKYLL_DESTINATION=/tmp/jekyll -e JEKYLL_GIT_BRANCH=$(echo $TRAVIS_BRANCH) nolte/jekyll-build-environment:latest -c "build"
 # - docker run -v /tmp/content:/tmp/jekyll -w /src/content -e JEKYLL_DESTINATION=/tmp/jekyll nolte/jekyll -c "rubocop"
-- docker run -v $(pwd):/src -v /tmp/jekyll:/tmp/jekyll -w /src/content -e GIT_DISCOVERY_ACROSS_FILESYSTEM=1 -e JEKYLL_DESTINATION=/tmp/jekyll -e JEKYLL_GIT_BRANCH=master nolte/jekyll-build-environment:latest -c "html_proofer"
+- docker run -v $(pwd):/src -v /tmp/jekyll:/tmp/jekyll -w /src/content -e GIT_DISCOVERY_ACROSS_FILESYSTEM=1 -e JEKYLL_DESTINATION=/tmp/jekyll -e JEKYLL_GIT_BRANCH=$(echo $TRAVIS_BRANCH) nolte/jekyll-build-environment:latest -c "html_proofer"
 env:
   global:
   - NOKOGIRI_USE_SYSTEM_LIBRARIES=true
