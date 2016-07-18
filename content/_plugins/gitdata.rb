@@ -7,8 +7,10 @@ module Jekyll
       print 'Current Branch: '
       value = `git rev-parse --abbrev-ref HEAD`
       print value
-      print "\n"
-      #value = `echo $(pwd)`
+      currentFolder = `echo $(pwd)`
+      print currentFolder
+      print `git rev-parse --abbrev-ref HEAD`
+      print `git --version`
       site.config['branche'] = value.strip!
 
       site.pages.each do | page |
@@ -18,7 +20,7 @@ module Jekyll
       end
       
       site.documents.each do | document |
-        print document.path
+        # print document.path
         cmd = 'git log --pretty=oneline --abbrev-commit --pretty=format:"%H" -1 ' + document.path
         file =  `#{cmd}`
         document.data['hash'] = file
