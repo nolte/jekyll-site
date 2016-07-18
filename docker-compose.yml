@@ -1,8 +1,11 @@
 jekyll: 
+#  image: jekyll/jekyll:pages
   build: .
   expose:
     - 4000
   ports: 
     - 127.0.0.1:4000:4000    
   volumes:
-    - ./content:/srv/jekyll
+    - ./content:/src
+    - /tmp/content:/src/_site
+  command: "build"  

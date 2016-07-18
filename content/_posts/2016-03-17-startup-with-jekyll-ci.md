@@ -63,6 +63,17 @@ categories: jekyll update
 </div>
 
 
+{% ditaa %}
+/----+  DAAP /-----+-----+ Audio  /--------+
+| PC |<------| RPi | MPD |------->| Stereo |
++----+       +-----+-----+        +--------+
+   |                 ^ ^
+   |     ncmpcpp     | | mpdroid /---------+
+   +--------=--------+ +----=----| Nexus S |
+                                 +---------+
+{% endditaa %}
+
+
 ### Publishing
  
  Das fertige Artefakt soll auf zwei unterschiedliche weisen Publiziert werden.
