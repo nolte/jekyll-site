@@ -5,7 +5,7 @@ module Jekyll
 
     def generate(site)
       print 'Current Branch: '
-      value = `basename $(git symbolic-ref HEAD)`
+      value = `git rev-parse --abbrev-ref HEAD`
       print value
       currentFolder = `echo $(pwd)`
       print currentFolder
