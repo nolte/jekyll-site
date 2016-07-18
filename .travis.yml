@@ -7,8 +7,8 @@ before_install:
 - docker build -t nolte/jekyll . 
 script: 
 - docker run -v /tmp/content:/tmp/jekyll -e JEKYLL_DESTINATION=/tmp/jekyll nolte/jekyll -c "build"
-- docker run -v /tmp/content:/tmp/jekyll -e JEKYLL_DESTINATION=/tmp/jekyll -c "rubocop"
-- docker run -v /tmp/content:/tmp/jekyll -e JEKYLL_DESTINATION=/tmp/jekyll -c "html_proofer"
+- docker run -v /tmp/content:/tmp/jekyll -e JEKYLL_DESTINATION=/tmp/jekyll nolte/jekyll -c "rubocop"
+- docker run -v /tmp/content:/tmp/jekyll -e JEKYLL_DESTINATION=/tmp/jekyll nolte/jekyll -c "html_proofer"
 env:
   global:
   - NOKOGIRI_USE_SYSTEM_LIBRARIES=true
