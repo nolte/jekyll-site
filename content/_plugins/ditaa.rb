@@ -91,7 +91,8 @@ module Jekyll
           st = Jekyll::StaticFile.new(site, site.source, @@output_dir, png_name)
           @@generated_files << st
           site.static_files << st
-          return '<img src="' + web_path + '" alt="' + png_name + '"/>'
+          # return ''
+          return '<a href="' + web_path + '" data-lightbox="' + png_name + '" data-title="' + png_name + '"><img src="' + web_path + '" class="img-responsive" alt="' + png_name + '" data-lightbox /></a>'
         else
           # return the code if failure
           return '<pre><code>' + source + '</code></pre>'
