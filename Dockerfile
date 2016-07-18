@@ -12,9 +12,5 @@ WORKDIR /src
 
 RUN bundle install
 
-ADD . /src
-
-RUN cd /src/content
-
 ENTRYPOINT ["/usr/local/bin/bundle","exec","rake"]
 
