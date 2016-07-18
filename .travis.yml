@@ -16,11 +16,11 @@ env:
   global:
   - NOKOGIRI_USE_SYSTEM_LIBRARIES=true
 branches:
-  only:
-  - master
-  - ditaa-integration
+  except:
+  - gh-pages
+
 after_success:
-- "./script/deployGithub.sh"
+ - "./script/deployGithub.sh"
 notifications:
   slack:
     rooms:

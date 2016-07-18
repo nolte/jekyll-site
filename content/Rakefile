@@ -26,9 +26,9 @@ end
 task :build do
   puts 'Building site...'.yellow.bold
   if ENV['JEKYLL_WATCH'] == 'true'
-    opts = { profile: true, destination: ENV['JEKYLL_DESTINATION'], watch: '' }
+    opts = { profile: true, destination: ENV['JEKYLL_DESTINATION'],source: ENV['JEKYLL_SOURCE'], watch: '' }
   else
-    opts = { profile: true, destination: ENV['JEKYLL_DESTINATION'] }
+    opts = { profile: true, destination: ENV['JEKYLL_DESTINATION'],source: ENV['JEKYLL_SOURCE'] }
   end
 
   puts opts.to_s.yellow.bold
