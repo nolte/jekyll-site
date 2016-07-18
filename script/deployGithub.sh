@@ -37,7 +37,7 @@ ls -all
 git config user.name "Travis CI"
 git config user.email "$COMMIT_AUTHOR_EMAIL"
 
-cp -r $BASEDIR/jekyll-site/content/_site/* $BASEDIR/out
+cp -r /tmp/content/* $BASEDIR/out
 echo "content after copy"
 echo $(pwd)
 ls -all
