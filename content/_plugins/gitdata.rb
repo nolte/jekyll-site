@@ -7,7 +7,7 @@ module Jekyll
       print 'halllo \n'
       value = `git rev-parse --abbrev-ref HEAD`
       #value = `echo $(pwd)`
-      site.config['branche'] = value
+      site.config['branche'] = value.strip!
 
       site.pages.each do | page |
         cmd = 'git log --pretty=oneline --abbrev-commit --pretty=format:"%H" -1 ' + page.path
