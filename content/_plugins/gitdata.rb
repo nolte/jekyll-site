@@ -5,11 +5,15 @@ module Jekyll
 
     def generate(site)
       print 'Current Branch: '
-      value = `git rev-parse --abbrev-ref HEAD`
+      
+      if ENV['JEKYLL_GIT_BRANCH']
+        value = ENV['JEKYLL_GIT_BRANCH']
+      else
+        value = `git rev-parse --abbrev-ref HEAD`
+      end
       print value
       currentFolder = `echo $(pwd)`
       print currentFolder
-      print ENV
       print `git rev-parse --abbrev-ref HEAD`
       print `git config --list`
       print `git --version`
