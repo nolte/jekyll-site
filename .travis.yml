@@ -7,20 +7,20 @@ before_script:
 - chmod +x ./script/deployGithub.sh
 
 before_install:
-- docker build -t nolte/jekyll . 
+- docker pull nolte/jekyll-build-environment:latest
 script: 
-- docker run -v /tmp/content:/tmp/jekyll -e JEKYLL_DESTINATION=/tmp/jekyll nolte/jekyll -c "build"
-- docker run -v /tmp/content:/tmp/jekyll -e JEKYLL_DESTINATION=/tmp/jekyll nolte/jekyll -c "rubocop"
-- docker run -v /tmp/content:/tmp/jekyll -e JEKYLL_DESTINATION=/tmp/jekyll nolte/jekyll -c "html_proofer"
+- docker run -v $(pwd):/src -v /tmp/jekyll:/tmp/jekyll -w /src/content -e GIT_DISCOVERY_ACROSS_FILESYSTEM=1 -e JEKYLL_DESTINATION=/tmp/jekyll -e JEKYLL_GIT_BRANCH=git-commit-data-plugin nolte/jekyll-build-environment:latest -c "build"
+# - docker run -v /tmp/content:/tmp/jekyll -w /src/content -e JEKYLL_DESTINATION=/tmp/jekyll nolte/jekyll -c "rubocop"
+- docker run -v $(pwd):/src -v /tmp/jekyll:/tmp/jekyll -w /src/content -e GIT_DISCOVERY_ACROSS_FILESYSTEM=1 -e JEKYLL_DESTINATION=/tmp/jekyll -e JEKYLL_GIT_BRANCH=git-commit-data-plugin nolte/jekyll-build-environment:latest -c "html_proofer"
 env:
   global:
   - NOKOGIRI_USE_SYSTEM_LIBRARIES=true
 branches:
-  only:
-  - master
-  - ditaa-integration
+  except:
+  - gh-pages
+
 after_success:
-- "./script/deployGithub.sh"
+ - "./script/deployGithub.sh"
 notifications:
   slack:
     rooms:

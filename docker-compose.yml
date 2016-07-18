@@ -1,7 +1,7 @@
 sitedata:
   image: busybox
   volumes:
-    - ./content:/src
+    - .:/src
 
 htmlcontent:
   image: busybox
@@ -10,6 +10,7 @@ htmlcontent:
 
 jekyll: 
   build: .
+  working_dir: /src/content
   environment:
     - JEKYLL_DESTINATION=/usr/share/nginx/html/jekyll-site
     - JEKYLL_WATCH=true

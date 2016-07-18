@@ -27,6 +27,7 @@ categories: jekyll
  * [reveal.js](http://lab.hakim.se/reveal-js/){:target="_blank"}
  * [bootstrap](https://getbootstrap.com/){:target="_blank"}
  * [ditaa](http://ditaa.sourceforge.net/){:target="_blank"} 
+ * [lightbox2](http://www.lokeshdhakar.com/projects/lightbox2){:target="_blank"} 
  
  
 ### Build
@@ -46,21 +47,21 @@ categories: jekyll
 </div>  
 <div class="col-sm-4" markdown="1">
  **[Snap CI](https://snap-ci.com/)**  
- [![Build Status](https://snap-ci.com/nolte/jekyll-site/branch/{{ site.branche }}/build_image)](https://snap-ci.com/nolte/jekyll-site/branch/{{ site.branche }})  
+ [![Build Status](https://snap-ci.com/nolte/jekyll-site/branch/{{ site.branche }}/build_image)](https://snap-ci.com/nolte/jekyll-site/branch/{{ site.branche }} )  
  Leider nicht mehr nutzbar seit der umstellung auf Docker Builds :-1: 
 </div>
 </div>
 
 #### Docker als Buildumgebung
 
- die umstellung hat die builds sehr verlangsamt ...
+ die Umstellung hat die Builds sehr verlangsamt ...
 
 {:.table}
-| CI System | ohne docker | mit docker und ditaa |
-|-----------|-------------|----------------------|
-| Snap CI   | ~ 40 sec    | /                    |
-| Travis-Ci | ~ 1:09 Min  | ~ 3:20 Min           |
-| Circle CI  | ~3:08 Min   | ~ 5:22 Min           |
+| CI System | ohne docker | mit docker und ditaa | mit docker image und ditaa | 
+|-----------|-------------|----------------------|----------------------|
+| Snap CI   | ~ 40 sec    | /                    | /                    |
+| Travis-Ci | ~ 1:09 Min  | ~ 3:20 Min           | ~ 1:20 Min           |
+| Circle CI | ~ 3:08 Min  | ~ 5:22 Min           | ~ 3:22 Min           |
 
 
 ### Publishing

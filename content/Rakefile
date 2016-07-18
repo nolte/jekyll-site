@@ -13,7 +13,7 @@ Encoding.default_external = Encoding::UTF_8
 Encoding.default_internal = Encoding::UTF_8
 
 # Do not touch below this line
-RuboCop::RakeTask.new
+# RuboCop::RakeTask.new
 
 # Extend string to allow for bold text.
 class String
