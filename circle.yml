@@ -15,13 +15,13 @@ machine:
 dependencies:
   override:
     - docker info
-    - docker build -t nolte/jekyll . 
+    - docker pull nolte/jekyll-build-environment:latest
 
 test:
   override:
-    - docker run -v $(pwd):/src -v /tmp/jekyll:/tmp/jekyll -w /src/content -e GIT_DISCOVERY_ACROSS_FILESYSTEM=1 -e JEKYLL_DESTINATION=/tmp/jekyll nolte/jekyll -c "build"
+    - docker run -v $(pwd):/src -v /tmp/jekyll:/tmp/jekyll -w /src/content -e GIT_DISCOVERY_ACROSS_FILESYSTEM=1 -e JEKYLL_DESTINATION=/tmp/jekyll nolte/jekyll-build-environment:latest -c "build"
     # - docker run -v /tmp/content:/tmp/jekyll -w /src/content -e JEKYLL_DESTINATION=/tmp/jekyll nolte/jekyll -c "rubocop"
-    - docker run -v $(pwd):/src -v /tmp/jekyll:/tmp/jekyll -w /src/content -e GIT_DISCOVERY_ACROSS_FILESYSTEM=1 -e JEKYLL_DESTINATION=/tmp/jekyll nolte/jekyll -c "html_proofer"
+    - docker run -v $(pwd):/src -v /tmp/jekyll:/tmp/jekyll -w /src/content -e GIT_DISCOVERY_ACROSS_FILESYSTEM=1 -e JEKYLL_DESTINATION=/tmp/jekyll nolte/jekyll-build-environment:latest -c "html_proofer"
 
 ## Custom notifications
 notify:
