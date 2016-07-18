@@ -27,6 +27,7 @@ categories: jekyll
  * [reveal.js](http://lab.hakim.se/reveal-js/){:target="_blank"}
  * [bootstrap](https://getbootstrap.com/){:target="_blank"}
  * [ditaa](http://ditaa.sourceforge.net/){:target="_blank"} 
+ * [lightbox2](http://www.lokeshdhakar.com/projects/lightbox2){:target="_blank"} 
  
  
 ### Build
@@ -53,7 +54,7 @@ categories: jekyll
 
 #### Docker als Buildumgebung
 
- die umstellung hat die builds sehr verlangsamt ...
+ die Umstellung hat die Builds sehr verlangsamt ...
 
 {:.table}
 | CI System | ohne docker | mit docker und ditaa |
