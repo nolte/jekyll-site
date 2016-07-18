@@ -1,20 +1,20 @@
-language: ruby
-rvm:
-- 2.3.1
-gemfile: content/Gemfile
+sudo: required
 
-before_script:
-- chmod +x ./script/deployGithub.sh
+services:
+  - docker
 
+before_install:
+- docker build -t nolte/jekyll . 
 script: 
-- sh -c 'cd content && bundle exec rake rubocop'
-- sh -c 'cd content && bundle exec rake html_proofer'
+- docker run -e JEKYLL_DESTINATION=/tmp nolte/jekyll -c "rubocop"
+- docker run -e JEKYLL_DESTINATION=/tmp nolte/jekyll -c "html_proofer"
 env:
   global:
   - NOKOGIRI_USE_SYSTEM_LIBRARIES=true
 branches:
   only:
   - master
+  - ditaa-integration
 # after_success:
 # - "./script/deployGithub.sh"
 notifications:
