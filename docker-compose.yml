@@ -14,7 +14,6 @@ jekyll:
   environment:
     - JEKYLL_DESTINATION=/usr/share/nginx/html/jekyll-site
     - JEKYLL_WATCH=true
-    - GIT_DISCOVERY_ACROSS_FILESYSTEM=1
   volumes_from:
     - sitedata
     - htmlcontent
