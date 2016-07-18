@@ -5,11 +5,13 @@ module Jekyll
 
     def generate(site)
       print 'Current Branch: '
-      value = `git symbolic-ref --short -q HEAD`
+      value = `git rev-parse --abbrev-ref HEAD`
       print value
       currentFolder = `echo $(pwd)`
       print currentFolder
+      print ENV
       print `git rev-parse --abbrev-ref HEAD`
+      print `git config --list`
       print `git --version`
       site.config['branche'] = value.strip!
 
