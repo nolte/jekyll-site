@@ -1,13 +1,18 @@
 sudo: required
 
+secure: "CK8tFCTxGksqI8t8095g5SZaUliw7I9/w1pmwrWJcRsvrcLCHYH6OejnYTprRVTvz9lJkvpXwVQwiwVMMC4NjgLaylpez8bwkVfCliRvr/u3olB9C/gqyIGyg1pWl5aS1T5h+6y8gU9b56dScWeACKkHOqXyL1VjdhTj8P2X3zfcAaHeVpqqkY0YrvUy+Bs/5K0D849SkbCJO7ctPc4TinoapjqLEsUXlnqR/8+P6Q8pe9+i7mbthI3PBgZV4twQGK4XhRpxyoPgNHFvCvrDtwuwCEIICMQtkmq0M5wZcUQl7py8DorPi6sRTe7ZHk35rMBsZBqTkT+mH+JX2GXH2MqGSpcA4DFWHgAPDOVWaq6V0LADPtiHqjMdjUIcmNGGnGPEVs2TBcDvSS+p3OC/ddGtiKIPYjLrjgP6p+zgH2qHAZXq2CSvwVlBZca9jQyMQ3WVx460dIptWJLQCkUNHTjxHKqdcOeY0uQXk2SnfrpAex/hQpLk2t87K3TC829ut6RB3s1AUy5I79AxzJc4tJKWt9PVoVEzIEEQd1PErI3uaXwYSJ+WZ2g2SAaEUQxUnIalIHNmrvvdQIHRzUYxrmQ18Nd6E464VfGR2BlmBUJTb4ke5KSOw/PAAmV8Wsq3juiCOnOpcYpI0mAwZV/g+3vYJuxaIuwm2xQEmR2RqX4="
+
 services:
   - docker
 
 before_script:
 - chmod +x ./script/deployGithub.sh
+- chmod +x ./script/keen-io-count.sh
 
 before_install:
+- echo $(date +"%s") > /tmp/jobstart
 - docker pull nolte/jekyll-build-environment:latest
+
 script: 
 - docker run -v $(pwd):/src -v /tmp/jekyll:/tmp/jekyll -w /src/content -e GIT_DISCOVERY_ACROSS_FILESYSTEM=1 -e JEKYLL_DESTINATION=/tmp/jekyll -e JEKYLL_GIT_BRANCH=$(echo $TRAVIS_BRANCH) nolte/jekyll-build-environment:latest -c "build"
 # - docker run -v /tmp/content:/tmp/jekyll -w /src/content -e JEKYLL_DESTINATION=/tmp/jekyll nolte/jekyll -c "rubocop"
@@ -21,6 +26,8 @@ branches:
 
 after_success:
  - "./script/deployGithub.sh"
+after_script:
+- ./script/keen-io-count.sh jekyll-site travis-ci $(echo $TRAVIS_BRANCH) $(cat /tmp/jobstart) $(date +"%s") $(echo $TRAVIS_TEST_RESULT)
 notifications:
   slack:
     rooms:
