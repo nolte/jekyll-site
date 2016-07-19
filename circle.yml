@@ -14,7 +14,9 @@ machine:
 
   pre:
     - echo $(date +"%s") > /tmp/jobstart
-    - chmod +x ./script/keen-io-count.sh    
+    - echo $(pwd)
+    - ls -all
+    - chmod +x script/keen-io-count.sh    
     
 dependencies:
   override:
