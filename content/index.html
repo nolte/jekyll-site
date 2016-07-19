@@ -38,8 +38,13 @@ isHome: true
 			</div>
 			<hr>
 			<div class="row">
-				<div id="count-pageviews-metric" class="col-sm-12"></div>
+				<div id="count-pageviews-metric" class="col-sm-6"></div>
+				<div class="col-sm-6">
+				<p><strong>commit count</strong></p>
+				<div id="git-jekyll-site-branch-push-count"></div>
+				</div>
 			</div>
+			
 			</div>
 
 		</div>
@@ -71,6 +76,25 @@ $( document ).ready(function() {
 		    	    chart
 		    	      .parseRequest(this)
 		    	      .title("GitHub Page Updates")
+		    	      .render();
+		    	  }
+		    	});
+		});
+	  Keen.ready(function(){
+		    var el = document.getElementById("git-jekyll-site-branch-push-count");
+		    var chart = new Keen.Dataviz()
+		        .el(el)
+		        .chartType('table')
+		        .prepare();
+
+		    
+		    client.run('git-jekyll-site-branch-push-count', function(err, res){
+		    	  if (err) {
+		    	    chart.error(err.message);
+		    	  }
+		    	  else {
+		    	    chart
+		    	      .parseRequest(this)
 		    	      .render();
 		    	  }
 		    	});

@@ -7,10 +7,55 @@ categories: jekyll ci iot
 
 <h1>Keen.io Charts..</h1>
 
-
+<p><a href="https://keen.io">Keen.io</a> dient als Analytics Service, zum aufzeichnen der anfallenden Daten.</p>
 <ul>
 <li><a href="https://developers.google.com/chart/interactive/docs/gallery/barchart#examples">Google Charts JS</a></li>
+<li><a href="https://keen.io">keen.io</a></li>
 </ul>
+
+<h2>Analysieren von Git Commits</h2>
+
+<p>
+Auf GitHub wurden Webhooks eingerichtet, das bei jeden <code>git push</code> die Daten nach <a href="https://keen.io">Keen.io</a> publiziert. 
+</p>
+
+{% ditaa %}
+{% include /images/git-keen-commit-hook.ditaa %}
+{% endditaa %}
+
+<p>Der Webhook für alle <code>git push</code> Events geht an folgende url:</p>
+<pre>
+<code>
+https://api.keen.io/3.0/projects/{project}/events/commit?api_key={writeApiKey}
+</code>
+</pre>
+<p>die Payload des Http Request ist unter der <a href="https://developer.github.com/v3/activity/events/types/#pushevent">GitHub Developer Doku</a> beschrieben.</p>
+
+<h3>Push Events</h3>
+
+<div class="row">
+	<div class="col-sm-12"> 
+	<p>Eine Zählung über alle <code>git push</code> Events.</p>
+	<div id="git-push-count"></div>
+	</div>
+</div>	
+
+<h3>This Site Push Events</h3>
+<p>Eine Zählung über die <code>git push</code> Events, welche dieses Projekt betreffen.</p>
+<div class="row">
+	<div class="col-sm-4"> 
+	<div id="git-jekyll-site-branch-push-count"></div>
+	</div>
+	<div class="col-sm-4">
+	 <div id="git-jekyll-site-not-master-push-count"></div> 
+	</div>
+	<div class="col-sm-4">
+	<div id="git-jekyll-site-master-push-count"></div> 
+	</div>
+</div>
+
+
+<h2>Analysieren von Ci Builds</h2>
 
 <div id="chart"></div>
 
@@ -23,7 +68,120 @@ $( document ).ready(function() {
 	  var client = new Keen({
 	      projectId: "{{ site.keen_projectId }}",
 	      readKey: "{{ site.keen_api_readKey }}"
-	  });	
+	  });
+	  Keen.ready(function(){
+		    var el = document.getElementById("git-jekyll-site-master-push-count");
+		    var chart = new Keen.Dataviz()
+		        .el(el)
+		        .chartType('metric')
+		        .prepare();
+
+		    var query = new Keen.Query("count", {
+		        eventCollection: "commit",
+		        filters: [
+		        {
+		            "operator": "eq",
+		            "property_name": "repository.full_name",
+		            "property_value": "nolte/jekyll-site"
+		        },
+		        {
+		            "operator": "eq",
+		            "property_name": "ref",
+		            "property_value": "refs/heads/master"
+		        }
+		    ],
+		        timeframe: "this_14_years",
+		        timezone: "UTC"
+		      });
+		    
+		    client.run(query, function(err, res){
+		    	  if (err) {
+		    	    chart.error(err.message);
+		    	  }
+		    	  else {
+		    	    chart
+		    	      .title("on master")
+		    	      .parseRequest(this)
+		    	      .render();
+		    	  }
+		    	});
+		});
+	  Keen.ready(function(){
+		    var el = document.getElementById("git-jekyll-site-not-master-push-count");
+		    var chart = new Keen.Dataviz()
+		        .el(el)
+		        .chartType('metric')
+		        .prepare();
+
+		    var query = new Keen.Query("count", {
+		        eventCollection: "commit",
+		        filters: [
+		        {
+		            "operator": "eq",
+		            "property_name": "repository.full_name",
+		            "property_value": "nolte/jekyll-site"
+		        },
+		        {
+		            "operator": "ne",
+		            "property_name": "ref",
+		            "property_value": "refs/heads/master"
+		        }
+		    ],
+		        timeframe: "this_14_years",
+		        timezone: "UTC"
+		      });
+		    
+		    client.run(query, function(err, res){
+		    	  if (err) {
+		    	    chart.error(err.message);
+		    	  }
+		    	  else {
+		    	    chart
+		    	      .title("not master")
+		    	      .parseRequest(this)
+		    	      .render();
+		    	  }
+		    	});
+		});		  
+	  Keen.ready(function(){
+		    var el = document.getElementById("git-push-count");
+		    var chart = new Keen.Dataviz()
+		        .el(el)
+		        .chartType('metric')
+		        .prepare();
+
+		    
+		    client.run('git-push-count', function(err, res){
+		    	  if (err) {
+		    	    chart.error(err.message);
+		    	  }
+		    	  else {
+		    	    chart
+		    	      .title("Git Push Count")
+		    	      .parseRequest(this)
+		    	      .render();
+		    	  }
+		    	});
+		});	
+	  Keen.ready(function(){
+		    var el = document.getElementById("git-jekyll-site-branch-push-count");
+		    var chart = new Keen.Dataviz()
+		        .el(el)
+		        .chartType('table')
+		        .prepare();
+
+		    
+		    client.run('git-jekyll-site-branch-push-count', function(err, res){
+		    	  if (err) {
+		    	    chart.error(err.message);
+		    	  }
+		    	  else {
+		    	    chart
+		    	      .parseRequest(this)
+		    	      .render();
+		    	  }
+		    	});
+		});	 
 
 	  Keen.ready(function(){
 		    var el = document.getElementById("chartBuildByBranch");
