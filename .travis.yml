@@ -10,7 +10,9 @@ before_script:
 - chmod +x ./script/keen-io-count.sh
 
 before_install:
+- echo $(date +"%s") > /tmp/jobstart
 - docker pull nolte/jekyll-build-environment:latest
+
 script: 
 - docker run -v $(pwd):/src -v /tmp/jekyll:/tmp/jekyll -w /src/content -e GIT_DISCOVERY_ACROSS_FILESYSTEM=1 -e JEKYLL_DESTINATION=/tmp/jekyll -e JEKYLL_GIT_BRANCH=$(echo $TRAVIS_BRANCH) nolte/jekyll-build-environment:latest -c "build"
 # - docker run -v /tmp/content:/tmp/jekyll -w /src/content -e JEKYLL_DESTINATION=/tmp/jekyll nolte/jekyll -c "rubocop"
@@ -25,7 +27,7 @@ branches:
 after_success:
  - "./script/deployGithub.sh"
 after_script:
-- "./script/keen-io-count.sh" 
+- ./script/keen-io-count.sh jekyll-site travis-ci $(echo $TRAVIS_BRANCH) $(cat /tmp/jobstart) $(date +"%s") $(echo $TRAVIS_TEST_RESULT)
 notifications:
   slack:
     rooms:
