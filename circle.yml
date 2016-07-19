@@ -16,7 +16,7 @@ machine:
   pre:
     - echo $(date +"%s") > /tmp/jobstart
   post:
-    - ./script/keen-io-count.sh jekyll-site circle-ci $(git rev-parse --abbrev-ref HEAD) $(cat /tmp/jobstart) $(date +"%s") -1  
+    - ./script/keen-io-count.sh jekyll-site circle-ci $(echo $CIRCLE_BRANCH) $(cat /tmp/jobstart) $(date +"%s") -1
 
 checkout:
   post:
