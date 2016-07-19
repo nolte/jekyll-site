@@ -7,9 +7,9 @@ build_end_formatted=$(date -d @${build_end}  +"%Y-%m-%dT%H:%H:%M:%S.%3NZ")
 build_start_formatted=$(date -d @${build_start}  +"%Y-%m-%dT%H:%H:%M:%S.%3NZ")
 
 duration=$((build_end-build_start)) 
-project=$3
-cisystem=$1
-branche=$2
+project=$1
+cisystem=$2
+branche=$3
 keen_api_key=$(echo $keen_api_key)
 test_result=$6
 
