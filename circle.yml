@@ -11,6 +11,16 @@ machine:
 
   timezone:
     Europe/Berlin # List of timezones http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
+    
+machine:
+  pre:
+    - echo $(date +"%s") > /tmp/jobstart
+  post:
+    - ./script/keen-io-count.sh jekyll-site circle-ci $(git rev-parse --abbrev-ref HEAD) $(cat /tmp/jobstart) $(date +"%s") -1  
+
+checkout:
+  post:
+    - chmod +x ./script/keen-io-count.sh
 
 dependencies:
   override:
