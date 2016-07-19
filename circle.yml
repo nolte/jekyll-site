@@ -14,12 +14,10 @@ machine:
 
   pre:
     - echo $(date +"%s") > /tmp/jobstart
-    - echo $(pwd)
-    - ls -all
-    - chmod +x script/keen-io-count.sh    
     
 dependencies:
   override:
+    - chmod +x script/keen-io-count.sh      
     - docker info
     - docker pull nolte/jekyll-build-environment:latest
 
@@ -29,7 +27,7 @@ test:
     # - docker run -v /tmp/content:/tmp/jekyll -w /src/content -e JEKYLL_DESTINATION=/tmp/jekyll nolte/jekyll -c "rubocop"
     - docker run -v $(pwd):/src -v /tmp/jekyll:/tmp/jekyll -w /src/content -e GIT_DISCOVERY_ACROSS_FILESYSTEM=1 -e JEKYLL_DESTINATION=/tmp/jekyll nolte/jekyll-build-environment:latest -c "html_proofer"
   post:
-    - ./script/keen-io-count.sh jekyll-site circle-ci $(echo $CIRCLE_BRANCH) $(cat /tmp/jobstart) $(date +"%s") -1
+    - script/keen-io-count.sh jekyll-site circle-ci $(echo $CIRCLE_BRANCH) $(cat /tmp/jobstart) $(date +"%s") -1
 
 
 ## Custom notifications
