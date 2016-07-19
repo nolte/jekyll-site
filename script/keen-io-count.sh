@@ -3,7 +3,7 @@ set -e # halt script on error
 
 build_start=$4
 build_end=$5
-duration=$build_end - $build_start
+duration=$((build_end-build_start)) 
 project=$3
 cisystem=$1
 branche=$2
