@@ -25,17 +25,56 @@ isHome: true
 				<strong>Build Status</strong>
 			</div>
 			<div class="panel-body">
-				<div>
+			<div class="row" style="text-align: center;">
+				<div class="col-sm-4"> 
 					<a href="https://travis-ci.org/nolte/jekyll-site" target="_blank" ><img src="https://travis-ci.org/nolte/jekyll-site.svg?branch=master" alt="status"></a>
 				</div>
-				<div>
+				<div class="col-sm-4"> 
 					<a href="https://circleci.com/gh/nolte/jekyll-site/tree/master" target="_blank"><img src="https://circleci.com/gh/nolte/jekyll-site.svg?style=shield&circle-token=:circle-token" alt="status"></a>
 				</div>
-				<div>
+				<div class="col-sm-4"> 
 					<a href="https://snap-ci.com/nolte/jekyll-site/branch/master" target="_blank"><img src="https://snap-ci.com/nolte/jekyll-site/branch/master/build_image" alt="status"></a>
 				</div>
+			</div>
+			<hr>
+			<div class="row">
+				<div id="count-pageviews-metric" class="col-sm-12"></div>
+			</div>
 			</div>
 
 		</div>
 	</div>
 </div>
+
+
+<script>
+$( document ).ready(function() {
+	
+	  var client = new Keen({
+	      projectId: "{{ site.keen_projectId }}",
+	      readKey: "{{ site.keen_api_readKey }}"
+	  });	
+
+	  Keen.ready(function(){
+		    var el = document.getElementById("count-pageviews-metric");
+		    var chart = new Keen.Dataviz()
+		        .el(el)
+		        .chartType('metric')
+		        .prepare();
+
+		    
+		    client.run('git-jekyll-site-gh-pages-push-count', function(err, res){
+		    	  if (err) {
+		    	    chart.error(err.message);
+		    	  }
+		    	  else {
+		    	    chart
+		    	      .parseRequest(this)
+		    	      .title("GitHub Page Updates")
+		    	      .render();
+		    	  }
+		    	});
+		});	 
+});
+</script>	  
+	  
