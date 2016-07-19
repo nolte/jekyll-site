@@ -70,9 +70,16 @@
 <div class="container">
 <div class="container">
 <div class="row">
-	<div class="col-sm-8" style="padding-right:20px; border-right: 1px solid #ccc;" id = "postConent"><h1>Was es nicht alles giebt ..</h1>
+	<div class="col-sm-8" style="padding-right:20px; border-right: 1px solid #ccc;" id = "postConent"><h1>Keen.io Charts..</h1>
+
+
+<ul>
+<li><a href="https://developers.google.com/chart/interactive/docs/gallery/barchart#examples">Google Charts JS</a></li>
+</ul>
 
 <div id="chart"></div>
+
+<div id="chartBuildByBranch"></div>
 
 
 <script>
@@ -82,7 +89,44 @@ $( document ).ready(function() {
 	      projectId: "578d609a80a7bd79bfd6cb0a",
 	      readKey: "2c8b72bf508f6343758403cc99066b7bdc30aa6ae89a70873e263e33981d3b4e750140761d5a1600c49b752b4fc119c051c72ee036d4b770b7ae1a4f203829934cfc50b9066b752ec4d2871039e59252e147e9876e1a6ae86fc8111766988662"
 	  });	
-	
+
+	  Keen.ready(function(){
+		    var el = document.getElementById("chartBuildByBranch");
+		    var chart = new Keen.Dataviz()
+		        .el(el)
+		        .chartType('barChart')
+		        .height(400)
+		        .prepare();
+
+		    client.run('jekyll-site-ci-count-build-by-branch', function(err, res){
+		       chart
+		           .parseRequest(this)
+		           .call(function(){
+		               var ds, df, line;
+		               ds = new google.visualization.arrayToDataTable(this.data());
+		               
+		               // Create and apply a formatter
+		               df = new google.visualization.DateFormat({
+		                   formatType: 'long', 
+		                   timeZone: -4
+		               });
+		               df.format(ds, 0);
+		               var options = {
+		            	        title: 'Build Counts',
+		            	        hAxis: {
+		            	          title: 'Build Count for each Branch',
+		            	          minValue: 0
+		            	        },
+		            	        vAxis: {
+		            	          title: 'Numbers of Builds'
+		            	        }
+		            	      };
+		               line = new google.visualization.ColumnChart(this.el());
+		               line.draw(ds,options);
+		           });
+		    });
+		});	  
+	  
 Keen.ready(function(){
     var el = document.getElementById("chart");
     var chart = new Keen.Dataviz()
