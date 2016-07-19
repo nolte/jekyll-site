@@ -11,40 +11,22 @@ categories: jekyll ci iot
 
 
 <script>
-
 $( document ).ready(function() {
-	   
-
-var client = new Keen({
-    projectId: "{{ site.keen_projectId }}",
-    readKey: "{{ site.keen_api_readKey }}"
-});
-
+	
+	  var client = new Keen({
+	      projectId: "{{ site.keen_projectId }}",
+	      readKey: "{{ site.keen_api_readKey }}"
+	  });	
+	
 Keen.ready(function(){
     var el = document.getElementById("chart");
-    var query = new Keen.Query("average", {
-        eventCollection: "build",
-        filters: [
-        {
-            "operator": "eq",
-            "property_name": "project",
-            "property_value": "jekyll-site"
-        }
-    ],
-        groupBy: [
-        "cisystem"
-    ],
-        targetProperty: "duration",
-        timeframe: "this_14_days",
-        timezone: "UTC"
-      });
     var chart = new Keen.Dataviz()
         .el(el)
-        .chartType('bar')
+        .chartType('barChart')
         .height(400)
         .prepare();
 
-    client.run(query, function(err, res){
+    client.run('jekyll-site-ci-avarage-build-duration', function(err, res){
        chart
            .parseRequest(this)
            .call(function(){
@@ -57,11 +39,20 @@ Keen.ready(function(){
                    timeZone: -4
                });
                df.format(ds, 0);
-
+               var options = {
+            	        title: 'Jekyll Site Ci Avarage Build Duration',
+            	        hAxis: {
+            	          title: 'Avarage Build Duration',
+            	          minValue: 0
+            	        },
+            	        vAxis: {
+            	          title: 'Ci System'
+            	        }
+            	      };
                line = new google.visualization.BarChart(this.el());
-               line.draw(ds);
+               line.draw(ds,options);
            });
     });
-});
+});  
 });
 </script>
