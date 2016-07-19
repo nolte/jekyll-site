@@ -5,9 +5,16 @@ date:   2016-07-18 12:31:11
 categories: jekyll ci iot
 ---
 
-<h1>Was es nicht alles giebt ..</h1>
+<h1>Keen.io Charts..</h1>
+
+
+<ul>
+<li><a href="https://developers.google.com/chart/interactive/docs/gallery/barchart#examples">Google Charts JS</a></li>
+</ul>
 
 <div id="chart"></div>
+
+<div id="chartBuildByBranch"></div>
 
 
 <script>
@@ -17,7 +24,44 @@ $( document ).ready(function() {
 	      projectId: "{{ site.keen_projectId }}",
 	      readKey: "{{ site.keen_api_readKey }}"
 	  });	
-	
+
+	  Keen.ready(function(){
+		    var el = document.getElementById("chartBuildByBranch");
+		    var chart = new Keen.Dataviz()
+		        .el(el)
+		        .chartType('barChart')
+		        .height(400)
+		        .prepare();
+
+		    client.run('jekyll-site-ci-count-build-by-branch', function(err, res){
+		       chart
+		           .parseRequest(this)
+		           .call(function(){
+		               var ds, df, line;
+		               ds = new google.visualization.arrayToDataTable(this.data());
+		               
+		               // Create and apply a formatter
+		               df = new google.visualization.DateFormat({
+		                   formatType: 'long', 
+		                   timeZone: -4
+		               });
+		               df.format(ds, 0);
+		               var options = {
+		            	        title: 'Build Counts',
+		            	        hAxis: {
+		            	          title: 'Build Count for each Branch',
+		            	          minValue: 0
+		            	        },
+		            	        vAxis: {
+		            	          title: 'Numbers of Builds'
+		            	        }
+		            	      };
+		               line = new google.visualization.ColumnChart(this.el());
+		               line.draw(ds,options);
+		           });
+		    });
+		});	  
+	  
 Keen.ready(function(){
     var el = document.getElementById("chart");
     var chart = new Keen.Dataviz()
