@@ -99,20 +99,59 @@
 				<strong>Build Status</strong>
 			</div>
 			<div class="panel-body">
-				<div>
+			<div class="row" style="text-align: center;">
+				<div class="col-sm-4"> 
 					<a href="https://travis-ci.org/nolte/jekyll-site" target="_blank" ><img src="https://travis-ci.org/nolte/jekyll-site.svg?branch=master" alt="status"></a>
 				</div>
-				<div>
+				<div class="col-sm-4"> 
 					<a href="https://circleci.com/gh/nolte/jekyll-site/tree/master" target="_blank"><img src="https://circleci.com/gh/nolte/jekyll-site.svg?style=shield&circle-token=:circle-token" alt="status"></a>
 				</div>
-				<div>
+				<div class="col-sm-4"> 
 					<a href="https://snap-ci.com/nolte/jekyll-site/branch/master" target="_blank"><img src="https://snap-ci.com/nolte/jekyll-site/branch/master/build_image" alt="status"></a>
 				</div>
+			</div>
+			<hr>
+			<div class="row">
+				<div id="count-pageviews-metric" class="col-sm-12"></div>
+			</div>
 			</div>
 
 		</div>
 	</div>
 </div>
+
+
+<script>
+$( document ).ready(function() {
+	
+	  var client = new Keen({
+	      projectId: "578d609a80a7bd79bfd6cb0a",
+	      readKey: "2c8b72bf508f6343758403cc99066b7bdc30aa6ae89a70873e263e33981d3b4e750140761d5a1600c49b752b4fc119c051c72ee036d4b770b7ae1a4f203829934cfc50b9066b752ec4d2871039e59252e147e9876e1a6ae86fc8111766988662"
+	  });	
+
+	  Keen.ready(function(){
+		    var el = document.getElementById("count-pageviews-metric");
+		    var chart = new Keen.Dataviz()
+		        .el(el)
+		        .chartType('metric')
+		        .prepare();
+
+		    
+		    client.run('git-jekyll-site-gh-pages-push-count', function(err, res){
+		    	  if (err) {
+		    	    chart.error(err.message);
+		    	  }
+		    	  else {
+		    	    chart
+		    	      .parseRequest(this)
+		    	      .title("GitHub Page Updates")
+		    	      .render();
+		    	  }
+		    	});
+		});	 
+});
+</script>	  
+	  
 
 </div>
 <div class="container">
