@@ -1,35 +1,31 @@
 sudo: required
-
-secure: "CK8tFCTxGksqI8t8095g5SZaUliw7I9/w1pmwrWJcRsvrcLCHYH6OejnYTprRVTvz9lJkvpXwVQwiwVMMC4NjgLaylpez8bwkVfCliRvr/u3olB9C/gqyIGyg1pWl5aS1T5h+6y8gU9b56dScWeACKkHOqXyL1VjdhTj8P2X3zfcAaHeVpqqkY0YrvUy+Bs/5K0D849SkbCJO7ctPc4TinoapjqLEsUXlnqR/8+P6Q8pe9+i7mbthI3PBgZV4twQGK4XhRpxyoPgNHFvCvrDtwuwCEIICMQtkmq0M5wZcUQl7py8DorPi6sRTe7ZHk35rMBsZBqTkT+mH+JX2GXH2MqGSpcA4DFWHgAPDOVWaq6V0LADPtiHqjMdjUIcmNGGnGPEVs2TBcDvSS+p3OC/ddGtiKIPYjLrjgP6p+zgH2qHAZXq2CSvwVlBZca9jQyMQ3WVx460dIptWJLQCkUNHTjxHKqdcOeY0uQXk2SnfrpAex/hQpLk2t87K3TC829ut6RB3s1AUy5I79AxzJc4tJKWt9PVoVEzIEEQd1PErI3uaXwYSJ+WZ2g2SAaEUQxUnIalIHNmrvvdQIHRzUYxrmQ18Nd6E464VfGR2BlmBUJTb4ke5KSOw/PAAmV8Wsq3juiCOnOpcYpI0mAwZV/g+3vYJuxaIuwm2xQEmR2RqX4="
-
+secure: CK8tFCTxGksqI8t8095g5SZaUliw7I9/w1pmwrWJcRsvrcLCHYH6OejnYTprRVTvz9lJkvpXwVQwiwVMMC4NjgLaylpez8bwkVfCliRvr/u3olB9C/gqyIGyg1pWl5aS1T5h+6y8gU9b56dScWeACKkHOqXyL1VjdhTj8P2X3zfcAaHeVpqqkY0YrvUy+Bs/5K0D849SkbCJO7ctPc4TinoapjqLEsUXlnqR/8+P6Q8pe9+i7mbthI3PBgZV4twQGK4XhRpxyoPgNHFvCvrDtwuwCEIICMQtkmq0M5wZcUQl7py8DorPi6sRTe7ZHk35rMBsZBqTkT+mH+JX2GXH2MqGSpcA4DFWHgAPDOVWaq6V0LADPtiHqjMdjUIcmNGGnGPEVs2TBcDvSS+p3OC/ddGtiKIPYjLrjgP6p+zgH2qHAZXq2CSvwVlBZca9jQyMQ3WVx460dIptWJLQCkUNHTjxHKqdcOeY0uQXk2SnfrpAex/hQpLk2t87K3TC829ut6RB3s1AUy5I79AxzJc4tJKWt9PVoVEzIEEQd1PErI3uaXwYSJ+WZ2g2SAaEUQxUnIalIHNmrvvdQIHRzUYxrmQ18Nd6E464VfGR2BlmBUJTb4ke5KSOw/PAAmV8Wsq3juiCOnOpcYpI0mAwZV/g+3vYJuxaIuwm2xQEmR2RqX4=
 services:
-  - docker
-
+- docker
 before_script:
 - chmod +x ./script/deployGithub.sh
 - chmod +x ./script/keen-io-count.sh
-
 before_install:
 - echo $(date +"%s") > /tmp/jobstart
 - docker pull nolte/jekyll-build-environment:latest
-
-script: 
-- docker run -v $(pwd):/src -v /tmp/jekyll:/tmp/jekyll -w /src/content -e GIT_DISCOVERY_ACROSS_FILESYSTEM=1 -e JEKYLL_DESTINATION=/tmp/jekyll -e JEKYLL_GIT_BRANCH=$(echo $TRAVIS_BRANCH) nolte/jekyll-build-environment:latest -c "build"
-# - docker run -v /tmp/content:/tmp/jekyll -w /src/content -e JEKYLL_DESTINATION=/tmp/jekyll nolte/jekyll -c "rubocop"
-- docker run -v $(pwd):/src -v /tmp/jekyll:/tmp/jekyll -w /src/content -e GIT_DISCOVERY_ACROSS_FILESYSTEM=1 -e JEKYLL_DESTINATION=/tmp/jekyll -e JEKYLL_GIT_BRANCH=$(echo $TRAVIS_BRANCH) nolte/jekyll-build-environment:latest -c "html_proofer"
+script:
+- docker run -v $(pwd):/src -v /tmp/jekyll:/tmp/jekyll -w /src/content -e GIT_DISCOVERY_ACROSS_FILESYSTEM=1
+  -e JEKYLL_DESTINATION=/tmp/jekyll -e JEKYLL_GIT_BRANCH=$(echo $TRAVIS_BRANCH) nolte/jekyll-build-environment:latest
+  -c "build"
+- docker run -v $(pwd):/src -v /tmp/jekyll:/tmp/jekyll -w /src/content -e GIT_DISCOVERY_ACROSS_FILESYSTEM=1
+  -e JEKYLL_DESTINATION=/tmp/jekyll -e JEKYLL_GIT_BRANCH=$(echo $TRAVIS_BRANCH) nolte/jekyll-build-environment:latest
+  -c "html_proofer"
 env:
   global:
   - NOKOGIRI_USE_SYSTEM_LIBRARIES=true
 branches:
   except:
   - gh-pages
-
 after_success:
- - "./script/deployGithub.sh"
+- "./script/deployGithub.sh"
 after_script:
-- ./script/keen-io-count.sh jekyll-site travis-ci $(echo $TRAVIS_BRANCH) $(cat /tmp/jobstart) $(date +"%s") $(echo $TRAVIS_TEST_RESULT)
+- ./script/keen-io-count.sh jekyll-site travis-ci $(echo $TRAVIS_BRANCH) $(cat /tmp/jobstart)
+  $(date +"%s") $(echo $TRAVIS_TEST_RESULT)
 notifications:
   slack:
-    rooms:
-      secure: wxbdzqs8U7mbB68hNRzVCGEr+NaS2MZu24GdSdvLfV8Pae1vAd4T0fAhi8zzPxvVvQ/AxEDkhmKE9H0FJTkdPl1TqtBc01DGTHzsmMITLCMThBYy0LKgg0UZh4JPg/9svQyut+2mm0u0WImaQ92sK3DfxXQBcPDaLI2LPrffuWiBXjT5tGwu8u9CDYZs5atu1WcsYk4xg0E4s/Y6GMOuDkgLDMECFhrpiHETS+fBBFNNaIpzRhuWO3LVWTy8FjJRiay/V0Hb4ScfzQBfRmDOUqHVhFo1OElUYjsH26Atn75fpPDHr2pZxHWaJZ5naeBQcghTrfoglmzIKmJ1V53ZrtWNhnwWDG0RbtA9ZttRIX9//ip+4ShBoWgn10qacBTlwMidaTDIYG65mL47DR6upCcWl6ex+zX3jnN3W8D9UkM61yRgB8ZcsuIt7G1OB3zirF4+4OuXeMVDjTJExRR7AulBcWTfBPu1CQ9eM3buK0J64DR3jSnXN87Krj6Bhx2mqRKMtc8yWlGLWzwGiZzSj3vOIH/2urYIh+8jkmtrD4mVMLRKma4JyiE/IHya/lzb3082/rMesrmNTZ94pdJB3fU+LWsU0EaGx30/kfJFBru+3HKiEmDZ4Ur9CP3B7XVcdCYZxxHR7F4yy7UZsB0FlQcs7qHYDpPaU+iMUnRzqD4=
-    on_success: always
+    secure: nQhPalGhsDalvGKbIo++hGDbHBfuUU94kDijnstbQd9Y0pphiRspCOOtEMUCCboQnFauDzK93tTpnSvterAwcPANVF9TdL9DZcgSaOTtWdCqYz9O92kT3q9C5fPs4dMmIbpXSKayk/5V00SnEEdblmloCG4yhe9N3NpXqR2v3LJJddFeuLtyabovqOaU44/yiB1ldUU1y40Q5L7kNJ1iq2E+xYOSf3mp7VIzZmXLytuyaLkNoA0dQswXtYemhcwTq2K7Z42Fiygh0h1ZfgyxbHt4bsT4tRJaJNIuEDH7cE81cI6/DkVP80lMSWHgBPbQsIfUu56RpKiVAL39q7ytU+/hxmpZdLd5ihmbn8wKgO44PD5IN44QllKFCb5C32BAAFz9XuQ59K2k2ZktJswXEP+aZrzP8J4xZ98mPyBNnpCDgAmPusN3InUTykheiyjBIv0Lr5TY9ZzwxWmp//bMcX8q8PRBbGUFGW/aZ9nudEXZnQrUeyX/nLqj2dznjRX5mFLUK4ugi4ZuzGbULACUdFDaHyGcf0Nx0QM/pFq2ziR40wIIJb70elyyXxTobTMIhCdZd2nzXJGmJVYlvGAUEsMDUXRkKchi9+/XYcK8gwRHsg+lxSQmEcCDsKk2W7Tp/wr3gMwKE6e3RS0WBH6Q8uLHujNcta92v/sMy00qLko=
