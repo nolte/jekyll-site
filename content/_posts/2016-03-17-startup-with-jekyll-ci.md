@@ -28,7 +28,8 @@ categories: jekyll
  * [bootstrap](https://getbootstrap.com/){:target="_blank"}
  * [ditaa](http://ditaa.sourceforge.net/){:target="_blank"} 
  * [lightbox2](http://www.lokeshdhakar.com/projects/lightbox2){:target="_blank"}
- * [Keen.io](https://keen.io){:target="_blank"}  
+ * [Keen.io](https://keen.io){:target="_blank"}
+ * [Disqus](https://disqus.com/){:target="_blank"}    
  
  
 ### Build
