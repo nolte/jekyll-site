@@ -19,4 +19,12 @@ armbian-cubox-i:
 jekyll-bootstrap-doc:
   url: http://mistic100.github.io/jekyll-bootstrap-doc/
   description: jekyll bootstrap template         
-         
+emoji-cheat-sheet:
+  url: http://www.emoji-cheat-sheet.com/
+  description: emoji-cheat-sheet
+materialdesignicons:
+  url: https://materialdesignicons.com/
+  description: Vector Icons für die Menüpunkte
+  
+  
+

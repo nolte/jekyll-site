@@ -1,9 +1,22 @@
+.unstyled {
+    list-style-type: none;
+    display: inline;
+    padding-left: 0;
+}
 
-#postConent .divider {
-  height: 1px;
-  width:100%;
-  display:block; /* for use on default inline elements like span */
-  margin: 9px 0;
-  overflow: hidden;
-  background-color: #e5e5e5;
+.unstyled > li {
+    display: inline;
+}
+
+#categories > ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+#categories > ul > li {
+    border-bottom: 1px solid #049cdb;
+    margin-bottom: 5px;
+}
+article.post .meta {
+    border-bottom: 1px solid #049cdb;
+    margin-bottom: 15px;
 }
