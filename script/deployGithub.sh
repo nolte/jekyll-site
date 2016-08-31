@@ -11,9 +11,6 @@ SHA=`git rev-parse --verify HEAD`
 cd ..
 BASEDIR=`echo $(pwd)`
 
-git config --global user.email "nolte07@googlemail.com"
-git config --global user.name "TravisCi"
-
 # Clone the existing gh-pages for this repo into out/
 # Create a new empty branch if gh-pages doesn't exist yet (should only happen on first deply)
 git clone $REPO out
@@ -38,7 +35,7 @@ ls -all
 
 # Now let's go have some fun with the cloned repo
 git config user.name "Travis CI"
-git config user.email "$COMMIT_AUTHOR_EMAIL"
+git config user.email "nolte07@googlemail.com"
 
 cp -r /tmp/jekyll/* $BASEDIR/out
 echo "content after copy"
