@@ -69,7 +69,7 @@ body {
           </li>
           
                       
-          <li >
+          <li class="active">
               <a href="/jekyll-site/links/">Links</a>
           </li>
           
@@ -88,114 +88,45 @@ body {
 <script id="dsq-count-scr" src="//nolte-jekyll-site.disqus.com/count.js" async></script>
 
 <div class="container">
-<div class="row">
-	<div class="col-sm-6">
-		<div class="panel panel-default">
-			<div class="panel-heading">
-				<strong>Posts</strong>
-			</div>
-			<div class="panel-body">
-				<ul>
-					
-					<li>(July 18, 2016) <a href="/jekyll-site/blog/2016/07/18/keen-io-integration/">Keen.io integration</a> 
-					</li> 
-					<li>(July 17, 2016) <a href="/jekyll-site/blog/2016/07/17/git-remove-sensitive-data/">Git remove sensitive data</a> 
-					</li> 
-					<li>(July 16, 2016) <a href="/jekyll-site/blog/2016/07/16/local-build/">Lokaler Build</a> 
-					</li> 
-					<li>(July 16, 2016) <a href="/jekyll-site/blog/2016/07/16/ditaa-integration/">Ditaa Integration</a> 
-					</li> 
-					<li>(April 17, 2016) <a href="/jekyll-site/blog/2016/04/17/compare-build-servers/">Vergleich Build Systemen</a> 
-					</li> 
-					<li>(March 17, 2016) <a href="/jekyll-site/blog/2016/03/17/startup-with-jekyll-ci/">Jekyll Ci Playground</a> 
-					</li> 
-				</ul>
-			</div>
-		</div>
-	</div>
-	<div class="col-sm-6">
-		<div class="panel panel-default">
-			<div class="panel-heading">
-				<strong>Build Status</strong>
-			</div>
-			<div class="panel-body">
-			<div class="row" style="text-align: center;">
-				<div class="col-sm-4"> 
-					<a href="https://travis-ci.org/nolte/jekyll-site" target="_blank" ><img src="https://travis-ci.org/nolte/jekyll-site.svg?branch=master" alt="status"></a>
-				</div>
-				<div class="col-sm-4"> 
-					<a href="https://circleci.com/gh/nolte/jekyll-site/tree/master" target="_blank"><img src="https://circleci.com/gh/nolte/jekyll-site.svg?style=shield&circle-token=:circle-token" alt="status"></a>
-				</div>
-				<div class="col-sm-4"> 
-					<a href="https://snap-ci.com/nolte/jekyll-site/branch/master" target="_blank"><img src="https://snap-ci.com/nolte/jekyll-site/branch/master/build_image" alt="status"></a>
-				</div>
-			</div>
-			<hr>
-			<div class="row">
-				<div id="count-pageviews-metric" class="col-sm-6"></div>
-				<div class="col-sm-6">
-				<p><strong>commit count</strong></p>
-				<div id="git-jekyll-site-branch-push-count"></div>
-				</div>
-			</div>
-			
-			</div>
-
-		</div>
-	</div>
-</div>
+<ul>
 
 
-<script>
-$( document ).ready(function() {
-	
-	  var client = new Keen({
-	      projectId: "578d609a80a7bd79bfd6cb0a",
-	      readKey: "2c8b72bf508f6343758403cc99066b7bdc30aa6ae89a70873e263e33981d3b4e750140761d5a1600c49b752b4fc119c051c72ee036d4b770b7ae1a4f203829934cfc50b9066b752ec4d2871039e59252e147e9876e1a6ae86fc8111766988662"
-	  });	
+ <li><a href="http://asciiflow.com/" target="_blank">asciiflow</a> (Erstellen von ASCII Diagramm, welche Grundlage für ditaa Diagramme sind.)</li>
 
-	  Keen.ready(function(){
-		    var el = document.getElementById("count-pageviews-metric");
-		    var chart = new Keen.Dataviz()
-		        .el(el)
-		        .chartType('metric')
-		        .prepare();
 
-		    
-		    client.run('git-jekyll-site-gh-pages-push-count', function(err, res){
-		    	  if (err) {
-		    	    chart.error(err.message);
-		    	  }
-		    	  else {
-		    	    chart
-		    	      .parseRequest(this)
-		    	      .title("GitHub Page Updates")
-		    	      .render();
-		    	  }
-		    	});
-		});
-	  Keen.ready(function(){
-		    var el = document.getElementById("git-jekyll-site-branch-push-count");
-		    var chart = new Keen.Dataviz()
-		        .el(el)
-		        .chartType('table')
-		        .prepare();
 
-		    
-		    client.run('git-jekyll-site-branch-push-count', function(err, res){
-		    	  if (err) {
-		    	    chart.error(err.message);
-		    	  }
-		    	  else {
-		    	    chart
-		    	      .parseRequest(this)
-		    	      .render();
-		    	  }
-		    	});
-		});	 
-});
-</script>	  
-	  
+ <li><a href="http://ditaa.sourceforge.net/" target="_blank">ditaa</a> (Kleines jar um aus ASCII Dateien png Diagramme zu generieren.)</li>
+
+
+
+ <li><a href="https://github.com/jamesward/jekyll-heroku" target="_blank">jekyll-heroku</a> (Grundlage für diese jekyll heroku Version)</li>
+
+
+
+ <li><a href="http://www.jamesward.com/2014/09/24/jekyll-on-heroku" target="_blank">jamesward-jekyll</a> (Beschreibung für das bereitstellen von Jekyll Sites auf Heroku)</li>
+
+
+
+ <li><a href="http://blog.hypriot.com/" target="_blank">hypriot</a> (Precompiled Docker binaries for armhf)</li>
+
+
+
+ <li><a href="http://www.armbian.com/cubox-i/" target="_blank">armbian-cubox-i</a> (Debian for cubox-i)</li>
+
+
+
+ <li><a href="http://mistic100.github.io/jekyll-bootstrap-doc/" target="_blank">jekyll-bootstrap-doc</a> (jekyll bootstrap template)</li>
+
+
+
+ <li><a href="http://www.emoji-cheat-sheet.com/" target="_blank">emoji-cheat-sheet</a> (emoji-cheat-sheet)</li>
+
+
+
+ <li><a href="https://materialdesignicons.com/" target="_blank">materialdesignicons</a> (Vector Icons für die Menüpunkte)</li>
+
+
+</ul>
 
 </div>
 <div class="container">
