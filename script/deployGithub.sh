@@ -35,7 +35,7 @@ ls -all
 
 # Now let's go have some fun with the cloned repo
 git config user.name "Travis CI"
-git config user.email "$COMMIT_AUTHOR_EMAIL"
+git config user.email "nolte07@googlemail.com"
 
 cp -r /tmp/jekyll/* $BASEDIR/out
 echo "content after copy"

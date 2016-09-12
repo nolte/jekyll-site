@@ -7,14 +7,19 @@ isHome: true
 	<div class="col-sm-6">
 		<div class="panel panel-default">
 			<div class="panel-heading">
-				<strong>Posts</strong>
+				<strong>Recent Posts</strong>
 			</div>
-			<div class="panel-body">
+			<div class="panel-body recent-posts">
 				<ul>
-					{% for post in site.posts | sort "date" %}
-					<li>({{ post.date | date: '%B %d, %Y' }}) <a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a> {% for tag in post.tags %}<span
-						class="label label-default">{{tag}}</span> {% endfor %}
-					</li> {% endfor %}
+				{% assign publishedPosts = site.posts | sort "date", "last" %}
+				
+					{% for post in publishedPosts limit:5  %}
+					<li>
+					<div>
+					<span><a href="{{  post.url | prepend: site.baseurl }}"><h1>{{post.title}}</h1></a>{% include blog/post/date.html %}{{ time }}</span> {% include blog/post/tags.html %}
+					</div>
+					 </li>
+					 {% endfor %}
 				</ul>
 			</div>
 		</div>

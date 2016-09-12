@@ -1,0 +1,21 @@
+  {% if index %}
+  <h1>
+    <a href="{{ p.url | prepend: site.baseurl }}{{ post.url }}">{{ post.title }}</a>
+  </h1>
+  {% else %}
+  <h1 data-toc-skip class="title indent">{{ page.title }}</h1>
+  {% endif %}
+
+  {% unless post.meta == false %}  
+  <div class="meta">
+    {% include blog/post/date.html %}{{ time }}
+    {% include post/time_to_read.html %}
+    {% include blog/post/tags.html %}
+    {% if post.comments != false  %}
+     <i class="mdi mdi-comment-text"></i>
+      <a class='comments'
+         href="{% if index %}{{  p.url | prepend: site.baseurl }}{{ post.url }}{% endif %}#disqus_thread"
+         >Comments</a>
+    {% endif %}
+  </div>
+{% endunless %}

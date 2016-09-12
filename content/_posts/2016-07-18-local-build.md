@@ -3,12 +3,10 @@ layout: post
 title: "Lokaler Build"
 date: 2016-07-16 11:31:11
 categories: docker
+comments: true
 ---
 
-# Lokales entwickeln 
-
-
-## Docker Compose File
+# Docker Compose File
  
  Zum leichten starten giebt es ein Docker Compose File im Repository, dieses verbindet die Docker Container.
  
@@ -29,6 +27,7 @@ categories: docker
 +-------+       +--------------+
 {% endditaa %}
 
+<!--more-->
 
 ## Docker Build
 

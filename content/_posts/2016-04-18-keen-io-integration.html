@@ -3,9 +3,8 @@ layout: post
 title:  "Keen.io integration"
 date:   2016-07-18 12:31:11
 categories: jekyll ci iot
+comments: true
 ---
-
-<h1>Keen.io Charts..</h1>
 
 <p><a href="https://keen.io">Keen.io</a> dient als Analytics Service, zum aufzeichnen der anfallenden Daten.</p>
 <ul>
@@ -13,7 +12,9 @@ categories: jekyll ci iot
 <li><a href="https://keen.io">keen.io</a></li>
 </ul>
 
-<h2>Analysieren von Git Commits</h2>
+<!--more-->
+
+<h1>Analysieren von Git Commits</h1>
 
 <p>
 Auf GitHub wurden Webhooks eingerichtet, das bei jeden <code>git push</code> die Daten nach <a href="https://keen.io">Keen.io</a> publiziert. 
@@ -31,7 +32,7 @@ https://api.keen.io/3.0/projects/{project}/events/commit?api_key={writeApiKey}
 </pre>
 <p>die Payload des Http Request ist unter der <a href="https://developer.github.com/v3/activity/events/types/#pushevent">GitHub Developer Doku</a> beschrieben.</p>
 
-<h3>Push Events</h3>
+<h2>Push Events</h2>
 
 <div class="row">
 	<div class="col-sm-12"> 
@@ -40,7 +41,7 @@ https://api.keen.io/3.0/projects/{project}/events/commit?api_key={writeApiKey}
 	</div>
 </div>	
 
-<h3>This Site Push Events</h3>
+<h2>This Site Push Events</h2>
 <p>Eine Zählung über die <code>git push</code> Events, welche dieses Projekt betreffen.</p>
 <div class="row">
 	<div class="col-sm-4"> 

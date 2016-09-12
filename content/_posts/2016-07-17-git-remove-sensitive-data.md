@@ -3,9 +3,8 @@ layout: post
 title: "Git remove sensitive data"
 date: 2016-07-17 20:31:11
 categories: git
+comments: true
 ---
-
-# Remove sensitive data
 
  Wenn die ``.gitignore`` doch nicht vollständig war :disappointed_relieved:.  
  
