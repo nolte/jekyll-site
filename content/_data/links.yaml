@@ -25,6 +25,12 @@ emoji-cheat-sheet:
 materialdesignicons:
   url: https://materialdesignicons.com/
   description: Vector Icons für die Menüpunkte
+revealjs:
+  url: https://github.com/hakimel/reveal.js/
+  description: Html Presentation  
+  
+  
+  
   
   
 
