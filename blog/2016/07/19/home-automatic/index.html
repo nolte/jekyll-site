@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Web Card</title>
+
+  <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+  <![endif]-->
+
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+  <!-- Optional theme -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+
+<style>
+body {
+	padding-top: 2em;
+}
+
+</style>
+
+
+<!-- Latest compiled and minified JavaScript -->
+  
+  <script src="/jekyll-site/assets/js/zeroClipboard/ZeroClipboard.js"></script>
+  
+<!-- add after bootstrap.min.css -->
+<link rel="stylesheet" href="https://cdn.rawgit.com/afeld/bootstrap-toc/v0.4.0/dist/bootstrap-toc.min.css">
+
+<link rel="stylesheet" href="/jekyll-site/assets/site/css/toc.css">
+<link rel="stylesheet" href="/jekyll-site/assets/site/css/customstyle.css">
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/holder/2.9.3/holder.min.js"></script>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.8.2/css/lightbox.min.css">
+<!-- <link rel="stylesheet" href="/jekyll-site/assets/site/css/materialdesignicons.bootstrap.css"> -->
+<link rel="stylesheet" href="https://cdn.materialdesignicons.com/1.7.22/css/materialdesignicons.min.css">
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/keen-js/3.4.1/keen.min.js" type="text/javascript"></script>
+
+</head>
+
+<body data-spy="scroll" data-target="#toc">
+<div class="container">
+<nav class="navbar navbar-default" role="navigation">
+   <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#example-navbar-collapse">
+         <span class="sr-only">Toggle navigation</span>
+         <span class="icon-bar"></span>
+         <span class="icon-bar"></span>
+         <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="/jekyll-site/">Web Card</a>
+   </div>
+   
+   <div class="collapse navbar-collapse" id="example-navbar-collapse">
+      <ul class="nav navbar-nav">
+          <li>
+              <a href="/jekyll-site/blog">Blog</a>
+          </li>
+          
+                      
+          <li>
+              <a href="/jekyll-site/links/">Links</a>
+          </li>
+          
+      </ul>
+   </div>
+   
+</nav>
+</div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+<!-- add after bootstrap.min.js -->
+<script src="https://cdn.rawgit.com/afeld/bootstrap-toc/v0.4.0/dist/bootstrap-toc.min.js"></script>
+      
+<script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.8.2/js/lightbox.min.js"></script>
+<script id="dsq-count-scr" src="//nolte-jekyll-site.disqus.com/count.js" async></script>
+
+<div class="container">
+<div class="row">
+	<div class="col-sm-8" style="padding-right:20px; border-right: 1px solid #ccc;">
+		<article class="post">
+		  
+		  <header>
+  
+  <h1 data-toc-skip class="title indent">Hausautomatisierung</h1>
+  
+
+    
+  <div class="meta">
+    
+
+
+
+<time datetime="2016-07-19T11:31:11+00:00" pubdate><i class="mdi mdi-calendar"></i> July 19, 2016</time>
+    <span><i class="mdi mdi-timer"></i> two minutes reading time</span>
+    
+
+  <span>
+    <i class="mdi mdi-tag-multiple"></i>
+    <ul class="tags unstyled">
+    
+      
+        <li>
+<a class="category" href="/jekyll-site/blog/categories/iot/">iot</a>,</li>
+      
+    
+    </ul>
+  </span>
+
+    
+     <i class="mdi mdi-comment-text"></i>
+      <a class="comments" href="#disqus_thread">Comments</a>
+    
+  </div>
+
+</header>
+
+
+<div id="postContent">
+  <p>Die wichtiegsten Elemente der Hausautomatisierung sind:</p>
+
+<ul>
+  <li>
+<a href="https://home-assistant.io/">home-assistant.io</a> als HA Software mit Rest API.</li>
+  <li>
+<a href="https://www.rabbitmq.com/">Rabbit MQ</a> als MQTT Broker
+    <ul>
+      <li><a href="https://www.rabbitmq.com/mqtt.html">MQTT Adapter</a></li>
+    </ul>
+  </li>
+  <li><a href="https://github.com/happyleavesaoc/python-firetv">FireTV Server</a></li>
+  <li><a href="https://www.mopidy.com/">Mopidy</a></li>
+  <li><a href="http://www.logitech.com/de-de/harmony-remotes">Logitech Harmony</a></li>
+</ul>
+
+<h1 id="berblick">Überblick</h1>
+
+<p>Übersicht der Services</p>
+
+<p><a href="/jekyll-site/assets/images/ditaa/ditaa-03b3244e6e05bd0876dd1621604bdbf5.png" data-lightbox="ditaa-03b3244e6e05bd0876dd1621604bdbf5.png" data-title="ditaa-03b3244e6e05bd0876dd1621604bdbf5.png"><img src="/jekyll-site/assets/images/ditaa/ditaa-03b3244e6e05bd0876dd1621604bdbf5.png" class="img-responsive" alt="ditaa-03b3244e6e05bd0876dd1621604bdbf5.png" data-lightbox=""></a></p>
+
+<a name="read-more"></a>
+
+<h2 id="hardware">Hardware</h2>
+
+<ul>
+  <li>1x RPI2
+    <ul>
+      <li><a href="https://home-assistant.io/">home-assistant.io</a></li>
+      <li><a href="https://www.rabbitmq.com/mqtt.html">Rabbit MQ</a></li>
+      <li>
+<a href="https://github.com/happyleavesaoc/python-firetv">FireTV Server</a> (optional)</li>
+      <li>InfluxDB (optional)</li>
+    </ul>
+  </li>
+  <li>1x RPI2 (optional)
+    <ul>
+      <li><a href="https://www.mopidy.com/">Mopidy</a></li>
+      <li>MongoDB</li>
+    </ul>
+  </li>
+  <li>FireTV (optional)
+    <ul>
+      <li><a href="https://kodi.tv/">Kodi</a></li>
+    </ul>
+  </li>
+  <li>FritzBox als NFS (optional)</li>
+  <li>1x Arduino mit ETHShield
+    <ul>
+      <li>IR-Receiver</li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="software">Software</h2>
+
+<h3 id="home-assistantio">Home-Assistant.io</h3>
+
+<p><a href="https://home-assistant.io/">home-assistant</a> ist der Zentrale Punkt über welchen die Steuerung passiert. <br>
+  Die für den Einsatz empfehle ich die <a href="https://hub.docker.com/u/homeassistant/">Docker Images</a>.</p>
+
+<h3 id="mqtt">MQTT</h3>
+
+<h3 id="mopidy">Mopidy</h3>
+
+<h2 id="zugriff">Zugriff</h2>
+
+<p>Der Zugriff auf die Hausautomatisierung muss auf unterschiedliche Arten stattfinden.</p>
+
+<h3 id="weboberflche">Weboberfläche</h3>
+
+<p>Die Weboberfläche ist mobile fähig <img class="emoji" title=":+1:" alt=":+1:" src="https://assets-cdn.github.com/images/icons/emoji/unicode/1f44d.png" height="20" width="20" align="absmiddle"> <a href="https://home-assistant.io/demo/">Online Demo</a>.</p>
+
+<h3 id="restapi">RestAPI</h3>
+
+<p>Genutzt für die Integration von NFC mit Hilfe von den Android Apps:</p>
+
+<ul>
+  <li><a href="https://play.google.com/store/apps/details?id=com.jwsoft.nfcactionlauncher">Trigger</a></li>
+  <li><a href="https://play.google.com/store/apps/details?id=net.dinglisch.android.taskerm">Tasker</a></li>
+</ul>
+
+<h3 id="mqtt-events">MQTT Events</h3>
+
+<p>Wird genutzt um die Events von den Mikrocontrollern entgegen zunehmen.</p>
+
+<h2 id="anwendungsgebiet">Anwendungsgebiet</h2>
+
+<h3 id="ir-fernbedienung">IR Fernbedienung</h3>
+
+<p>Für die Einbundung von IR Fernbedienung wurde ein kleines Arduino Projekt verwendet, <a href="https://github.com/nolte/platformio-mqtt-ir-receiver">platformio-mqtt-ir-receiver</a>.</p>
+
+<p><a href="/jekyll-site/assets/images/ditaa/ditaa-00f5b11407f4a7035f951218e4783e80.png" data-lightbox="ditaa-00f5b11407f4a7035f951218e4783e80.png" data-title="ditaa-00f5b11407f4a7035f951218e4783e80.png"><img src="/jekyll-site/assets/images/ditaa/ditaa-00f5b11407f4a7035f951218e4783e80.png" class="img-responsive" alt="ditaa-00f5b11407f4a7035f951218e4783e80.png" data-lightbox=""></a></p>
+
+<h4 id="logitech-harmony-integration">Logitech Harmony Integration</h4>
+
+<p>Für die Integration des Logitech Hubs war eine kleine API nötig, um die <a href="https://de.wikipedia.org/wiki/Extensible_Messaging_and_Presence_Protocol">XMPP</a> Schnittstelle anzusprechen.
+ Die API ist auf Github zu finden <a href="https://github.com/nolte/py-harmony">nolte/py-harmony</a>.</p>
+
+<p><a href="/jekyll-site/assets/images/ditaa/ditaa-0356e6e6adc4f7dbcd75434756db5aed.png" data-lightbox="ditaa-0356e6e6adc4f7dbcd75434756db5aed.png" data-title="ditaa-0356e6e6adc4f7dbcd75434756db5aed.png"><img src="/jekyll-site/assets/images/ditaa/ditaa-0356e6e6adc4f7dbcd75434756db5aed.png" class="img-responsive" alt="ditaa-0356e6e6adc4f7dbcd75434756db5aed.png" data-lightbox=""></a></p>
+
+<h3 id="steuerung-der-musik-anlage">Steuerung der Musik Anlage</h3>
+
+<p><strong>UseCase:</strong> Sollte noch kein WLAN Device in</p>
+
+<h3 id="steuerung-des-nas-systems">Steuerung des NAS Systems</h3>
+
+<p>Da ich faul <img class="emoji" title=":relaxed:" alt=":relaxed:" src="https://assets-cdn.github.com/images/icons/emoji/unicode/263a.png" height="20" width="20" align="absmiddle"> bin starte ich meine PCs gerne von dem Platz aus wo ich aktuell bin.
+ Dafür eignet sich die Homeassistant Komponente <a href="https://home-assistant.io/components/switch.wake_on_lan/">Wake on LAN Switch</a>.</p>
+
+<h3 id="master-power-off">Master Power Off</h3>
+
+<p>Ich möchte einge Möglichkeit haben sämtliche Geräte auszuschalten. 
+ Dieses geschiet über die Kombination von:</p>
+
+<ul>
+  <li>Logitech Harmony Component, für Geräte wie TV, Verstärker usw…</li>
+  <li>
+<a href="https://home-assistant.io/components/shell_command/">Shell Command</a> zum herunterfahren von Linux Systemen.</li>
+  <li><a href="https://home-assistant.io/components/#all">usw…</a></li>
+</ul>
+
+<p>wobei die Herrausforderung nicht beim auschalten liegt, sondern bei der Problemstellung das viele IR Geräte nur eine
+ <code class="highlighter-rouge">Power Toggle</code> Funktion anbieten. Aus diesem Grund muss man beim Auschalten wissen ob das jeweilige Gerät auch gestartet ist.
+ Ansonsten würde man den Start inizialisieren…<br>
+ Dafür eignet sich der <a href="https://home-assistant.io/components/device_tracker.nmap_tracker/">nmap scanner</a> um den Netzwerkstatus abzufragen.<br>
+ Eine weiterre möglichkeit für IR Geräte ist es einen Arduino aufzustellen, welcher die IR Commands entgegen nimmt und über MQTT an die <a href="https://home-assistant.io/components/sensor.mqtt/">Hausautomatisierung</a> weitergiebt. In 
+ diesem Fall kann man den Zustand mit Hilfe von <a href="https://home-assistant.io/components/switch/">Switches</a> speichern.</p>
+
+
+</div>
+
+		</article>
+	</div>
+	<div class="col-sm-4">
+		<nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="toc" data-spy="affix" data-toggle="toc"></nav>
+	</div>
+	
+</div>
+
+
+<section id="disqus">
+  <h3 class="indent title">Comments</h3>
+  <div id="disqus_thread" aria-live="polite">
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+	/* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+	var disqus_shortname = 'nolte-jekyll-site'; // required: replace example with your forum shortname
+	var disqus_developer = 1; // Comment out when the site is live
+	var disqus_identifier = "/blog/2016/07/19/home-automatic/";
+
+	/* * * DON'T EDIT BELOW THIS LINE * * */
+	(function() {
+		var dsq = document.createElement('script');
+		dsq.type = 'text/javascript';
+		dsq.async = true;
+		dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+		(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+	})();
+</script>
+<noscript>
+	Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+</noscript>
+<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+</div></section>
+</div>
+
+
+    
+<script>
+  $( document ).ready(function() {
+	  $( '<div class="divider"></div>' ).insertAfter( "h1,h2,h3" );
+    });
+</script>
+
+<div class="container">
+	<footer class="footer">
+	        <p>footer</p>
+	</footer>
+</div>
+
+
+
+<script>
+  $( document ).ready(function() {
+	   
+    });
+ 
+    </script>
+    
+    <script>
+    $(function () {
+    	
+        client = new ZeroClipboard($(".copy_btn"));
+    })
+</script>
+</body>
+
+
+</html>
