@@ -35,7 +35,14 @@ article.post .meta {
 
 .recent-posts .h1, h1 {
     font-size: 1.35em;
-    
-/*     display: inherit; */
 }
 
+.recent-posts .h2, h2 {
+    font-size: 1.25em;
+}
+.recent-posts .h3, h3 {
+    font-size: 1.15em;
+}
+.recent-posts .h4, h4 {
+    font-size: 1.05em;
+}
