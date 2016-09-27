@@ -116,7 +116,7 @@ comments: true
  wobei die Herrausforderung nicht beim auschalten liegt, sondern bei der Problemstellung das viele IR Geräte nur eine
  ``Power Toggle`` Funktion anbieten. Aus diesem Grund muss man beim Auschalten wissen ob das jeweilige Gerät auch gestartet ist.
  Ansonsten würde man den Start inizialisieren...  
- Dafür eignet sich der [nmap scanner](https://home-assistant.io/components/device_tracker.nmap_scanner/) um den Netzwerkstatus abzufragen.  
+ Dafür eignet sich der [nmap scanner](https://home-assistant.io/components/device_tracker.nmap_tracker/) um den Netzwerkstatus abzufragen.  
  Eine weiterre möglichkeit für IR Geräte ist es einen Arduino aufzustellen, welcher die IR Commands entgegen nimmt und über MQTT an die [Hausautomatisierung](https://home-assistant.io/components/sensor.mqtt/) weitergiebt. In 
  diesem Fall kann man den Zustand mit Hilfe von [Switches](https://home-assistant.io/components/switch/) speichern.
    
