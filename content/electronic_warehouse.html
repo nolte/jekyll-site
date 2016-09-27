@@ -1,0 +1,15 @@
+---
+layout: site
+title: Electronic
+navigation: true
+---
+
+<ul>
+{% for post in site.electronic %}
+
+ <li><a href="{{  post.url | prepend: site.baseurl }}">{{post.title}}</a> ({{post.description}})</li>
+
+{% endfor %}
+</ul>
+
+
