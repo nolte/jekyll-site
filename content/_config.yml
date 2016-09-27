@@ -12,6 +12,12 @@ keen_projectId: 578d609a80a7bd79bfd6cb0a
 baseurl: /jekyll-site
 category_dir: blog/categories
 
+collections:
+  posts:
+    output:   true
+  electronic:
+    output:   true   
+
 exclude: ['README.md', 'LICENSE', 'bower.json', 'Gemfile.lock', 'Gemfile']
 
 
