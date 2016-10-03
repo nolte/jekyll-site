@@ -1,0 +1,56 @@
+wifi:
+  css: mdi mdi-wifi
+network:
+  css: mdi mdi-access-point-network 
+arduino:
+  css: mdi mdi-chip
+sensor:  
+  css: mdi mdi-eyedropper
+433MHz:  
+  css: mdi mdi-access-point
+transmitter:  
+  css: mdi mdi-folder-upload
+receiver:  
+  css: mdi mdi-folder-download
+camera:  
+  css: mdi mdi-camera
+ir:  
+  css: mdi mdi-white-balance-iridescent
+shift_register:  
+  css: mdi mdi-edge      
+controller:  
+  css: mdi mdi-serial-port    
+eth:  
+  css: mdi mdi-edge     
+developerboard:  
+  css: mdi mdi-face-profile     
+button:  
+  css: mdi mdi-fingerprint
+temperature:  
+  css: mdi mdi-thermometer
+humidity:  
+  css: mdi mdi-water-percent
+proto_shield:  
+  css: mdi mdi-rocket
+led:  
+  css: mdi mdi-led-on 
+matrix:  
+  css: mdi mdi-matrix      
+gas:  
+  css: mdi mdi-spray
+alcohol:  
+  css: mdi mdi-glass-tulip      
+clock:  
+  css: mdi mdi-clock  
+rfc: 
+  css: mdi mdi-nfc-variant  
+monoxide: 
+  css: mdi mdi-airballoon
+avoidance: 
+  css: mdi mdi-elevator  
+2.4GHz:
+  css: mdi mdi-access-point
+sdcard:
+  css: mdi mdi-sd
+
+        

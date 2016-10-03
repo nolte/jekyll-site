@@ -4,12 +4,27 @@ title: Electronic
 navigation: true
 ---
 
-<ul>
-{% for post in site.electronic %}
+<table style="width: 100%">
+	<thead>
+		<tr>
+			<th>Name</th>
+			<th>Label</th>
+			<th>Description</th>
+			<th>Tags</th>
+		</tr>
+	</thead>
+	<tbody>
+	{% assign elements = site.electronic | sort: 'title'  %}
+	{% for post in elements   %}
+		<tr>
+			<td><a href="{{  post.url | prepend: site.baseurl }}">{{post.title}}</a></td>
+			<td><a href="{{  post.url | prepend: site.baseurl }}/label" target="_blank"><i class="mdi mdi-qrcode"></i></a></td>
+			<td>{{post.description}}</td>
+			<td>{% include asides/tags.html tags=post.tags  %}</td>
+		</tr>
+    {% endfor %}
+	</tbody>
+</table>
 
- <li><a href="{{  post.url | prepend: site.baseurl }}">{{post.title}}</a> ({{post.description}})</li>
-
-{% endfor %}
-</ul>
 
 

@@ -2,15 +2,15 @@
 layout: electronic_element
 title: NodeMCU
 description: Wifi Developer Board
-tags: wifi,developerboard
+tags: wifi network developerboard
 implementations:
-  - additional_title: DAOKAI
+  - title: DAOKAI
     stocked: 1
     links:
        - url: https://www.amazon.de/gp/product/B01CBSZZJO
          type: buying
          price: ~ 7,70€       
-  - additional_title: Aihasd
+  - title: Aihasd
     stocked: 1
     links:
        - url: https://www.amazon.de/gp/product/B0182JOWOK
@@ -19,4 +19,10 @@ implementations:
 links:
 ---
 
+ Super Board um fix zu starten...
+
+* 1x Analog in
+* X mal Digial Pins
+* Wifi 
+* [platformio.org](http://platformio.org/platforms/espressif8266)
 

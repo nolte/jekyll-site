@@ -2,5 +2,30 @@
 layout: site
 ---
 
+<h1>{{page.title}}</h1>
+<span>{{page.description}}</span> {% include asides/tags.html tags=page.tags  %}
+<hr>
 
-xxx
+{{ content }}
+
+{% if page.implementations %}
+<hr>
+<h2>Implementierungen</h2>
+<ul>
+{% for implementation in page.implementations    %}
+	<li>{{ implementation.title }}</li>
+{% endfor %}
+</ul>
+{% endif %}
+{% if page.links %}
+<hr>
+
+<h2>Links</h2>
+<ul>
+{% for link in page.links    %}
+	<li>{% include asides/link.html %}</li>
+{% endfor %}
+</ul>
+{% endif %}
+
+<a href="./label/index.html" target="_blank"><i class="mdi mdi-qrcode"></i> Label</a>

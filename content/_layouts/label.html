@@ -1,0 +1,16 @@
+---
+layout: default
+---
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport">
+  <title>{{site.name}}</title>
+</head>
+<body>
+{% assign filenames = page.url | split: '/' %}
+<div>
+{{ page.qrcode }}
+</div>
+<div>{{ page.title }}</<div>
+</body>
+

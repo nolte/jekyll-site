@@ -2,7 +2,7 @@
 layout: electronic_element
 title:  Button
 description: Drucktaster
-tags: clock
+tags: button
 implementations:
   - stocked: 1
     links:

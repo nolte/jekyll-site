@@ -11,6 +11,7 @@ keen_projectId: 578d609a80a7bd79bfd6cb0a
 
 baseurl: /jekyll-site
 category_dir: blog/categories
+qrproxy: http://hardware.noltarium.de
 
 collections:
   posts:
@@ -35,6 +36,7 @@ gems:
   - jekyll-sitemap
   - jekyll-paginate
   - jekyll-time-to-read
+  - rqrcode
   
 paginate: 5          # Posts per page on the blog index
 paginate_path: "blog/posts/:num"  # Directory base for pagination URLs eg. /posts/2/
