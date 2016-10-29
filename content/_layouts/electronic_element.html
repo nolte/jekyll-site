@@ -4,16 +4,25 @@ layout: site
 
 <h1>{{page.title}}</h1>
 <span>{{page.description}}</span> {% include asides/tags.html tags=page.tags  %}
+{% if page.implementations %}
 <hr>
-
 {{ content }}
-
+{% endif %}
 {% if page.implementations %}
 <hr>
 <h2>Implementierungen</h2>
-<ul>
+<ul class="unstyled">
 {% for implementation in page.implementations    %}
-	<li>{{ implementation.title }}</li>
+	<li>
+		<h2>{{ implementation.title }}</h2>
+		<div>
+		<ul>
+{% for link in implementation.links    %}
+	<li>{% include asides/link.html %}</li>
+{% endfor %}
+</ul>	
+		</div>
+	</li>
 {% endfor %}
 </ul>
 {% endif %}

@@ -5,11 +5,11 @@
     <ul class="tags unstyled">
     {% if post %}
       {% for item in post.categories %}
-        <li>{{ item | category_link }},</li>
+        <li><a href="{{ p.url | prepend: site.baseurl }}/blog/category/{{ item  | category_link | downcase }}/">{{ item | category_link }}</a>,</li>
       {% endfor %}
     {% else %}
       {% for item in page.categories %}
-        <li>{{ item | category_link }},</li>
+        <li><a href="{{ p.url | prepend: site.baseurl }}/blog/category/{{ item  | category_link | downcase }}/">{{ item | category_link }}</a>,</li>
       {% endfor %}
     {% endif %}
     </ul>
