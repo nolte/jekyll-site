@@ -4,7 +4,7 @@
     {% assign categories = site.categories | sort %}
     {% for category in categories %}
       <li>
-      	<a href="{{ p.url | prepend: site.baseurl }}/blog/category/{{ category | first | downcase }}/">
+      	<a href="{{ p.url | prepend: site.baseurl }}/blog/categories/{{ category | first | downcase }}/">
       		<i class="mdi mdi-tag"></i>
       		{{ category | first | replace: '-', ' '}} ({{ category[1].size }})
       	</a>
